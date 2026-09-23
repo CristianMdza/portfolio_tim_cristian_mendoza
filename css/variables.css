@@ -1,0 +1,15 @@
+:root {
+  /* Variables de couleurs de base (codes hexadécimaux) */
+  --couleur-noir: #0A0908;
+  --couleur-noir-de-jais: #22333B;
+  --couleur-lin-doux: #EAE0D5;
+  --couleur-tan: #C6AC8F;
+  --couleur-brun-pierre: #5E503F;
+
+  /* Variables sémantiques */
+  --noir-fonce: var(--couleur-noir);
+  --noir-de-jais: var(--couleur-noir-de-jais);
+  --lin-doux: var(--couleur-lin-doux);
+  --tan: var(--couleur-tan);
+  --brun-pierre: var(--couleur-brun-pierre);
+}
