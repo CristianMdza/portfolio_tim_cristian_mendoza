@@ -1,0 +1,12 @@
+.bouton--fonce {
+	background: var(--brun-pierre);
+	color: var(--lin-doux);
+	box-shadow: 0 8px 18px rgba(94, 80, 63, 0.16);
+}
+
+.bouton--fonce:hover,
+.bouton--fonce:focus-visible {
+	background: var(--noir-de-jais);
+	outline: none;
+	transform: translateY(-2px);
+}

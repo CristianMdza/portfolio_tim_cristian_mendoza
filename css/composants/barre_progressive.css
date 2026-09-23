@@ -1,0 +1,36 @@
+.skills {
+	display: grid;
+	gap: 11px;
+}
+
+.skill__heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 5px;
+	font-size: 0.72rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.skill__heading span:first-child {
+	font-weight: 500;
+	letter-spacing: 0.06em;
+}
+
+.skill__heading span:last-child {
+	color: rgba(34, 51, 59, 0.56);
+	font-weight: 400;
+}
+
+.skill__track {
+	height: 3px;
+	background: rgba(94, 80, 63, 0.2);
+}
+
+.skill__progress {
+	display: block;
+	width: var(--progress);
+	height: 100%;
+	background: var(--brun-pierre);
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Portfolio de Christian Mendoza" />
+		<title>Christian Mendoza | Portfolio</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+		<link rel="stylesheet" href="css/variables.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/layout.css" />
+		<link rel="stylesheet" href="css/composants/bouton_pale.css" />
+		<link rel="stylesheet" href="css/composants/bouton_fonce.css" />
+		<link rel="stylesheet" href="css/composants/barre_progressive.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="site-header__inner">
+				<a class="site-header__brand" href="#accueil" aria-label="Christian Mendoza, accueil">
+					Christian Mendoza
+				</a>
+
+				<nav class="site-nav" aria-label="Navigation principale">
+					<a class="site-nav__link is-active" href="#accueil" aria-current="page">
+						<iconify-icon icon="solar:home-2-linear" aria-hidden="true"></iconify-icon>
+						<span>Accueil</span>
+					</a>
+					<a class="site-nav__link" href="#a-propos">
+						<iconify-icon icon="solar:user-linear" aria-hidden="true"></iconify-icon>
+						<span>À propos</span>
+					</a>
+					<a class="site-nav__link" href="#projets">
+						<iconify-icon icon="solar:case-linear" aria-hidden="true"></iconify-icon>
+						<span>Mes projets</span>
+					</a>
+					<a class="site-nav__link" href="#services">
+						<iconify-icon icon="solar:stars-linear" aria-hidden="true"></iconify-icon>
+						<span>Services</span>
+					</a>
+					<a class="site-nav__link" href="#contact">
+						<iconify-icon icon="solar:letter-linear" aria-hidden="true"></iconify-icon>
+						<span>Contact</span>
+					</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero" id="accueil" aria-labelledby="hero-title">
+				<div class="hero__content">
+					<p class="hero__eyebrow">Le design dans les détails</p>
+					<h1 class="hero__title" id="hero-title">Portfolio</h1>
+					<p class="hero__description">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+						Sed do eiusmod tempor incididunt ut labore et dolore<br />
+						magna aliqua.
+					</p>
+					<a class="bouton bouton--pale" href="#projets">Mes projets</a>
+				</div>
+
+				<a class="hero__scroll" href="#a-propos" aria-label="Défiler vers la suite">
+					<span>Défiler</span>
+					<span class="hero__scroll-line" aria-hidden="true"></span>
+				</a>
+			</section>
+
+			<section class="about" id="a-propos" aria-labelledby="about-title">
+				<div class="about__content">
+					<p class="about__eyebrow">À propos</p>
+					<h2 class="about__title" id="about-title">
+						<span>Une vision</span>
+						<span class="about__title-accent">singulière</span>
+					</h2>
+					<div class="about__copy">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim.
+						</p>
+					</div>
+
+					<div class="skills" aria-label="Compétences">
+						<div class="skill">
+							<div class="skill__heading"><span>Titre (compétence 1)</span><span>95%</span></div>
+							<div class="skill__track"><span class="skill__progress" style="--progress: 95%"></span></div>
+						</div>
+						<div class="skill">
+							<div class="skill__heading"><span>Titre (compétence 2)</span><span>90%</span></div>
+							<div class="skill__track"><span class="skill__progress" style="--progress: 90%"></span></div>
+						</div>
+						<div class="skill">
+							<div class="skill__heading"><span>Titre (compétence 3)</span><span>85%</span></div>
+							<div class="skill__track"><span class="skill__progress" style="--progress: 85%"></span></div>
+						</div>
+						<div class="skill">
+							<div class="skill__heading"><span>Titre (compétence 4)</span><span>78%</span></div>
+							<div class="skill__track"><span class="skill__progress" style="--progress: 78%"></span></div>
+						</div>
+						<div class="skill">
+							<div class="skill__heading"><span>Titre (compétence 5)</span><span>82%</span></div>
+							<div class="skill__track"><span class="skill__progress" style="--progress: 82%"></span></div>
+						</div>
+					</div>
+
+					<a class="bouton bouton--fonce" href="#contact">Télécharger mon CV</a>
+				</div>
+
+				<div class="about__visual" aria-label="Espace réservé pour la photo de profil">
+					<div class="about__circle" aria-hidden="true"></div>
+					<div class="about__photo-placeholder">Photo profil</div>
+					<div class="about__experience">
+						<strong>12+</strong>
+						<span>Années<br />d'expérience</span>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
