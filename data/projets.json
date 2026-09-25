@@ -1,21 +1,22 @@
 [
     {
         "id": 1,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "description": "",
         "role": "",
         "logiciel": "",
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "galerie-images": []
     },
     {
         "id": 2,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "synopsis": "",
         "description": "",
         "role": "",
@@ -23,26 +24,28 @@
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "galerie-images": []
     },
     {
         "id": 3,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "description": "",
         "role": "",
         "logiciel": "",
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "galerie-images": []
     },
     {
         "id": 4,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "synopsis": "",
         "description": "",
         "role": "",
@@ -51,13 +54,14 @@
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "galerie-images": []
     },
     {
         "id": 5,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "synopsis": "",
         "description": "",
         "role": "",
@@ -65,20 +69,22 @@
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "video": ""
     },
     {
         "id": 6,
+        "titre": "",
         "categorie": [],
-        "nom": "",
         "description": "",
         "role": "",
         "logiciel": "",
         "annee": "",
         "modalite": "",
         "mention": "",
-        "image": "",
-        "galerie": []
+        "format": "",
+        "image-principale": "",
+        "video": ""
     }
 ]
