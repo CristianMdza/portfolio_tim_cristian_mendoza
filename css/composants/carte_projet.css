@@ -1,0 +1,161 @@
+.projects {
+	min-height: 100vh;
+	padding: 100px clamp(24px, 12vw, 185px) 130px;
+	background: var(--noir-de-jais);
+	color: var(--lin-doux);
+}
+
+.projects__intro {
+	margin-bottom: 54px;
+}
+
+.projects__eyebrow {
+	margin: 0 0 5px;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.projects__title {
+	margin: 0;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: clamp(3rem, 5vw, 3.75rem);
+	font-style: italic;
+	font-weight: 700;
+	line-height: 0.95;
+	text-transform: uppercase;
+}
+
+.projects__title span {
+	color: var(--lin-doux);
+}
+
+.projects__title em {
+	color: var(--tan);
+	font-style: inherit;
+}
+
+.projects__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: clamp(48px, 12vw, 170px);
+	row-gap: 72px;
+}
+
+.project-card {
+	max-width: 380px;
+}
+
+.project-card--right {
+	margin-top: 157px;
+}
+
+.project-card__media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 245px;
+	margin-bottom: 14px;
+	border: 1px solid rgba(198, 172, 143, 0.6);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.project-card__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-card__media-placeholder {
+	color: rgba(234, 224, 213, 0.5);
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.25rem;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+.project-card__title {
+	margin: 0 0 8px;
+	color: var(--lin-doux);
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+.project-card__title span {
+	color: var(--tan);
+	font-weight: 500;
+}
+
+.project-card__description {
+	max-width: 350px;
+	min-height: 42px;
+	margin: 0 0 10px;
+	color: rgba(234, 224, 213, 0.6);
+	font-size: 1rem;
+	font-weight: 300;
+	line-height: 1.45;
+}
+
+.project-card__footer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.project-card__tags {
+	display: flex;
+	gap: 4px;
+}
+
+.project-card__tags span,
+.modal-project__tags span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 60px;
+	min-height: 28px;
+	padding: 4px 10px;
+	border: 2px solid rgba(198, 172, 143, 0.6);
+	border-radius: 30px;
+	color: var(--lin-doux);
+	font-size: 0.58rem;
+	font-weight: 400;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.project-card__button {
+	min-width: 120px;
+	min-height: 28px;
+	padding: 4px 14px;
+	font-size: 0.6rem;
+}
+
+.projects__error {
+	color: var(--lin-doux);
+}
+
+@media (max-width: 760px) {
+	.projects {
+		padding: 72px 24px 96px;
+	}
+
+	.projects__grid {
+		grid-template-columns: 1fr;
+		row-gap: 58px;
+	}
+
+	.project-card,
+	.project-card--right {
+		max-width: 480px;
+		margin: 0 auto;
+	}
+
+	.project-card__media {
+		height: min(60vw, 280px);
+	}
+}
