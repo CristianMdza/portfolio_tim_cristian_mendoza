@@ -27,3 +27,9 @@
 	outline: none;
 	transform: translateY(-2px);
 }
+
+.bouton--contact {
+	min-height: 48px;
+	padding: 12px 32px;
+	font-size: 1rem;
+}

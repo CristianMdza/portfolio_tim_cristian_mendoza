@@ -275,6 +275,58 @@
 	text-transform: uppercase;
 }
 
+.contact {
+	min-height: 100vh;
+	padding: 112px clamp(24px, 12.5vw, 168px) 120px;
+	background: var(--lin-doux);
+	color: var(--noir-fonce);
+}
+
+.contact__container {
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+.contact__eyebrow {
+	margin: 0 0 52px;
+	color: var(--brun-pierre);
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.24em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.contact__title {
+	margin: 0 0 40px;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: clamp(4.5rem, 10vw, 9.375rem);
+	font-weight: 400;
+	letter-spacing: -0.065em;
+	line-height: 0.86;
+}
+
+.contact__title-line {
+	display: block;
+}
+
+.contact__title-line--regular,
+.contact__title--regular {
+	font-style: normal;
+	font-weight: 400;
+}
+
+.contact__title--medium {
+	font-style: normal;
+	font-weight: 500;
+}
+
+.contact__title-line--accent {
+	color: var(--tan);
+	font-style: italic;
+	font-weight: 400;
+}
+
 @media (max-width: 900px) {
 	.site-header {
 		min-height: 196px;
@@ -339,5 +391,24 @@
 	.about__visual {
 		height: 420px;
 		margin: 0 auto;
+	}
+
+	.contact {
+		min-height: auto;
+		padding: 76px 24px 88px;
+	}
+
+	.contact__eyebrow {
+		margin-bottom: 38px;
+		font-size: 0.85rem;
+	}
+
+	.contact__title {
+		margin-bottom: 32px;
+		font-size: clamp(3.7rem, 16vw, 6rem);
+	}
+
+	.bouton--contact {
+		font-size: 0.85rem;
 	}
 }
