@@ -1,0 +1,162 @@
+.services {
+	min-height: 100vh;
+	padding: 104px clamp(24px, 10vw, 150px) 112px;
+	background: var(--noir-fonce);
+	color: var(--lin-doux);
+}
+
+.services__container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.services__intro {
+	margin-bottom: 54px;
+	text-align: center;
+}
+
+.services__eyebrow {
+	margin: 0 0 24px;
+	color: var(--tan);
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.24em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.services__title {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: clamp(3rem, 5vw, 3.75rem);
+	font-style: italic;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 1.05;
+	text-transform: uppercase;
+}
+
+.services__title span:first-child {
+	color: var(--lin-doux);
+}
+
+.services__title-accent {
+	color: var(--tan);
+}
+
+.services__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.service-card {
+	min-height: 174px;
+	padding: 25px 24px 22px;
+	border: 2px solid rgba(198, 172, 143, 0.6);
+	border-radius: 30px;
+	opacity: 0;
+	transform: translateY(18px) scale(0.98);
+	animation: service-card-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.service-card:nth-child(2) { animation-delay: 90ms; }
+.service-card:nth-child(3) { animation-delay: 180ms; }
+.service-card:nth-child(4) { animation-delay: 270ms; }
+.service-card:nth-child(5) { animation-delay: 360ms; }
+.service-card:nth-child(6) { animation-delay: 450ms; }
+
+.service-card:hover,
+.service-card:focus-within {
+	border-color: var(--tan);
+	background: rgba(198, 172, 143, 0.05);
+	transform: translateY(-5px) scale(1.035);
+}
+
+.service-card__icon {
+	display: grid;
+	width: 38px;
+	height: 38px;
+	margin-bottom: 20px;
+	place-items: center;
+	border-radius: 50%;
+	background: var(--tan);
+	color: var(--noir-fonce);
+}
+
+.service-card__icon iconify-icon {
+	font-size: 22px;
+}
+
+.service-card h3 {
+	margin: 0 0 12px;
+	color: var(--lin-doux);
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 1.125rem;
+	font-weight: 700;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+.service-card p {
+	max-width: 240px;
+	margin: 0;
+	color: rgba(234, 224, 213, 0.6);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+@keyframes service-card-reveal {
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.service-card {
+		animation: none;
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+@media (max-width: 820px) {
+	.services {
+		padding-right: 28px;
+		padding-left: 28px;
+	}
+
+	.services__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 540px) {
+	.services {
+		padding-top: 76px;
+		padding-bottom: 82px;
+	}
+
+	.services__intro {
+		margin-bottom: 38px;
+	}
+
+	.services__eyebrow {
+		font-size: 0.85rem;
+	}
+
+	.services__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.service-card {
+		min-height: 160px;
+	}
+}
