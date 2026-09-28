@@ -41,6 +41,106 @@ function initialiserCarrouselLogiciels() {
 	}, 2400);
 }
 
+function initialiserAnimationAPropos() {
+	const section = document.querySelector("#a-propos");
+	if (!section || typeof window.anime !== "function") return;
+
+	const anime = window.anime;
+	const lignesTitre = section.querySelectorAll(".about__title > span");
+	const paragraphes = section.querySelectorAll(".about__copy p");
+	const photo = section.querySelector(".about__photo-placeholder");
+	const badge = section.querySelector(".about__experience");
+	const compteur = section.querySelector(".about__experience strong");
+	const barres = section.querySelectorAll(".skill__progress");
+	const pourcentages = section.querySelectorAll(".skill__heading span:last-child");
+	const progressions = [...barres].map((barre, index) => ({
+		barre,
+		label: pourcentages[index],
+		valeur: { nombre: 0 },
+		finale: Number.parseInt(getComputedStyle(barre).getPropertyValue("--progress"), 10)
+	}));
+
+	anime.set(lignesTitre[0], { opacity: 0, translateX: -50 });
+	anime.set(lignesTitre[1], { opacity: 0, translateX: 50 });
+	anime.set(paragraphes, { opacity: 0, translateX: -30 });
+	anime.set(photo, { opacity: 0 });
+	anime.set(badge, { opacity: 0 });
+	anime.set(barres, { width: "0%" });
+	pourcentages.forEach((pourcentage) => {
+		pourcentage.textContent = "0%";
+	});
+
+	const valeurCompteur = { valeur: 0 };
+	const timeline = anime.timeline({ autoplay: false });
+
+	timeline
+		.add({
+			targets: lignesTitre[0],
+			opacity: [0, 1],
+			translateX: [-50, 0],
+			duration: 700,
+			easing: "easeOutCubic"
+		})
+		.add({
+			targets: lignesTitre[1],
+			opacity: [0, 1],
+			translateX: [50, 0],
+			duration: 700,
+			easing: "easeOutCubic"
+		}, "-=120")
+		.add({
+			targets: paragraphes,
+			opacity: [0, 1],
+			translateX: [-30, 0],
+			delay: anime.stagger(120),
+			duration: 600,
+			easing: "easeOutCubic"
+		}, "+=100")
+		.add({
+			targets: photo,
+			opacity: [0, 1],
+			duration: 1000,
+			easing: "easeOutQuad"
+		}, "-=300")
+		.add({
+			targets: badge,
+			opacity: [0, 1],
+			duration: 700,
+			easing: "easeOutQuad"
+		}, "-=700")
+		.add({
+			targets: valeurCompteur,
+			valeur: 3,
+			round: 1,
+			duration: 900,
+			easing: "easeOutCubic",
+			update: () => {
+				compteur.textContent = `${valeurCompteur.valeur}+`;
+			}
+		}, "-=500")
+	progressions.forEach((progression, index) => {
+		timeline.add({
+			targets: progression.valeur,
+			nombre: progression.finale,
+			round: 1,
+			duration: 700,
+			easing: "easeOutCubic",
+			update: () => {
+				progression.barre.style.width = `${progression.valeur.nombre}%`;
+				progression.label.textContent = `${progression.valeur.nombre}%`;
+			}
+		}, index === 0 ? "+=150" : "+=0");
+	});
+
+	const observer = new IntersectionObserver(([entree]) => {
+		if (!entree.isIntersecting) return;
+		timeline.play();
+		observer.unobserve(section);
+	}, { threshold: 0.25 });
+
+	observer.observe(section);
+}
+
 try {
 	const projets = await chargerProjets();
 	grille.innerHTML = projets.map(creerCarteProjet).join("");
@@ -51,4 +151,5 @@ try {
 }
 
 initialiserCarrouselLogiciels();
+initialiserAnimationAPropos();
 document.fonts.ready.then(animerTitreHero);
