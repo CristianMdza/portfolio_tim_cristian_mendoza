@@ -1,12 +1,21 @@
 .bouton--fonce {
-	background: var(--brun-pierre);
-	color: var(--lin-doux);
-	box-shadow: 0 0 18px rgba(94, 80, 63, 0.16);
+	background: var(--tan);
+	color: var(--noir-fonce);
+	box-shadow: 0 0 18px rgba(198, 172, 143, 0.24);
 }
 
 .bouton--fonce:hover,
 .bouton--fonce:focus-visible {
-	background: var(--noir-de-jais);
+	background: rgba(198, 172, 143, 0.75);
+	color: var(--noir-fonce);
 	outline: none;
-	transform: translateY(-2px);
+	transform: scale(1.04);
+	box-shadow: 0 0 18px rgba(198, 172, 143, 0.36);
+}
+
+.bouton--fonce:active {
+	background: var(--brun-pierre);
+	color: var(--lin-doux);
+	box-shadow: 0 0 14px rgba(94, 80, 63, 0.42), inset 0 2px 5px rgba(10, 9, 8, 0.2);
+	transform: scale(0.95);
 }

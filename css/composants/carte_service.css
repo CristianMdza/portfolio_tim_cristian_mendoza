@@ -1,6 +1,6 @@
 .services {
 	min-height: 100vh;
-	padding: 104px clamp(24px, 10vw, 150px) 112px;
+	padding: 116px max(24px, calc((100% - 1001px) / 2));
 	background: var(--noir-fonce);
 	color: var(--lin-doux);
 }

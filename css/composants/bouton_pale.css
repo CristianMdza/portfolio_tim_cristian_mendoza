@@ -12,20 +12,28 @@
 	letter-spacing: 0.04em;
 	line-height: 1;
 	text-transform: uppercase;
-	transition: background-color 180ms ease, transform 180ms ease;
+	transition: background-color 280ms ease, color 280ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
 }
 
 .bouton--pale {
-	background: var(--tan);
+	background: var(--lin-doux);
 	color: var(--noir-fonce);
-	box-shadow: 0 0 18px rgba(198, 172, 143, 0.16);
+	box-shadow: 0 0 18px rgba(234, 224, 213, 0.18);
 }
 
 .bouton--pale:hover,
 .bouton--pale:focus-visible {
-	background: var(--lin-doux);
+	background: rgba(234, 224, 213, 0.75);
 	outline: none;
-	transform: translateY(-2px);
+	transform: scale(1.04);
+	box-shadow: 0 0 18px rgba(234, 224, 213, 0.3);
+}
+
+.bouton--pale:active {
+	background: var(--brun-pierre);
+	color: var(--lin-doux);
+	box-shadow: 0 0 14px rgba(94, 80, 63, 0.42), inset 0 2px 5px rgba(10, 9, 8, 0.2);
+	transform: scale(0.95);
 }
 
 .bouton--contact {

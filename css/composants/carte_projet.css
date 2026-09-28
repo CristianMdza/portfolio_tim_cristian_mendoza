@@ -1,6 +1,6 @@
 .projects {
 	min-height: 100vh;
-	padding: 100px clamp(24px, 12vw, 185px) 130px;
+	padding: 116px max(24px, calc((100% - 1001px) / 2));
 	background: var(--noir-de-jais);
 	color: var(--lin-doux);
 }
