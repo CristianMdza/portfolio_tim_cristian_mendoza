@@ -1,7 +1,7 @@
 .bouton--fonce {
 	background: var(--brun-pierre);
 	color: var(--lin-doux);
-	box-shadow: 0 8px 18px rgba(94, 80, 63, 0.16);
+	box-shadow: 0 0 18px rgba(94, 80, 63, 0.16);
 }
 
 .bouton--fonce:hover,
