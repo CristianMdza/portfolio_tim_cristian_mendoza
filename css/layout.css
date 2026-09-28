@@ -147,6 +147,11 @@
 	white-space: nowrap;
 }
 
+.hero__title-letter {
+	display: inline-block;
+	opacity: 0;
+}
+
 .hero__description {
 	margin: 58px 0 46px;
 	color: rgba(234, 224, 213, 0.58);

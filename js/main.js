@@ -4,6 +4,19 @@ import { initialiserPopUp } from "./composants/pop_up_projet.js";
 
 const grille = document.querySelector(".projects__grid");
 
+function animerTitreHero() {
+	const lettres = document.querySelectorAll(".hero__title-letter");
+	if (!lettres.length || typeof window.anime !== "function") return;
+
+	window.anime({
+		targets: lettres,
+		opacity: [0, 1],
+		delay: window.anime.stagger(120),
+		duration: 800,
+		easing: "easeOutQuad"
+	});
+}
+
 function initialiserCarrouselLogiciels() {
 	const carrousel = document.querySelector("[data-software-carousel]");
 	if (!carrousel) return;
@@ -38,3 +51,4 @@ try {
 }
 
 initialiserCarrouselLogiciels();
+document.fonts.ready.then(animerTitreHero);
