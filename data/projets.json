@@ -58,7 +58,7 @@
     "descriptionDemande": "Le projet demandait d'élaborer un environnement 3D complet à partir d'un concept original, incluant la recherche visuelle, la scénarisation, la modélisation et l'animation sous Maya. Il fallait ensuite exporter les séquences et réaliser le montage vidéo final dans DaVinci Resolve avec une bande sonore synchronisée.",
     "descriptionProjet": "J'ai créé le concept sur PowerPoint avec le synopsis, le scénarimage et un style visuel minimaliste aux tons vert pâle. J'ai modélisé et animé les lotus, sphères suspendues et escaliers dans Maya, puis réalisé le montage vidéo final et l'ambiance sonore dans DaVinci Resolve.",
     "role": "Animateur 3D", "logiciel": "Autodesk Maya & DaVinci Resolve", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
-    "imagePrincipale": "", "galerieImages": [], "video": "assets/videos/projet_5/Etrange_paradis_emergent.mp4"
+    "imagePrincipale": "assets/images/projet_5/Image_couverture_etrange_paradis_emergent.jpg", "galerieImages": [], "video": "assets/videos/projet_5/Etrange_paradis_emergent.mp4"
   },
   {
     "id": 6,
@@ -67,6 +67,6 @@
     "descriptionDemande": "Le projet demandait de concevoir une animation générative de 10 secondes à 24 images par seconde en utilisant obligatoirement un système procédural sous Maya comme MASH. Il fallait travailler les matériaux, l'éclairage et le mouvement de la caméra en un seul plan-séquence, puis faire le rendu final sans utiliser de ciel physique de base.",
     "descriptionProjet": "J'ai utilisé le système MASH dans Maya avec les nœuds Replicator, Audio et Random pour animer automatiquement des cubes et révéler mon logo Kris Musik synchronisé avec du son. J'ai créé un décor rétrofuturiste avec un sol en grille néon et des ondes sonores, puis réalisé le rendu et le montage dans DaVinci Resolve.",
     "role": "Animateur 3D", "logiciel": "Autodesk Maya & DaVinci Resolve", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
-    "imagePrincipale": "", "galerieImages": [], "video": "assets/videos/projet_6/Animation_generative_3d.mp4"
+    "imagePrincipale": "assets/images/projet_6/Image_couverture_animation_generative.png", "galerieImages": [], "video": "assets/videos/projet_6/Animation_generative_3d.mp4"
   }
 ]
