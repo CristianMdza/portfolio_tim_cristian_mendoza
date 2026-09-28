@@ -12,6 +12,6 @@ export function creerCarteProjet(projet, index) {
 		<div class="project-card__media">${apercu}</div>
 		<h3 class="project-card__title">${echapper(projet.titre)} <span>– ${echapper(projet.categorie)}</span></h3>
 		<p class="project-card__description">${echapper(projet.description)}</p>
-		<div class="project-card__footer"><div class="project-card__tags">${details}</div><button class="bouton bouton--pale project-card__button" type="button" data-project-id="${projet.id}">Voir projet</button></div>
+		<div class="project-card__footer"><div class="project-card__tags">${details}</div><button class="bouton project-card__button" type="button" data-project-id="${projet.id}"><span>Voir projet</span></button></div>
 	</article>`;
 }

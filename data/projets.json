@@ -27,7 +27,7 @@
     "description": "Conception collaborative d'un environnement intérieur 3D irréel et humoristique où des objets du quotidien sont détournés de leur fonction initiale.",
     "descriptionDemande": "L'enseignante demandait de concevoir en équipe une scène 3D originale et surréaliste composée d'au moins trois objets modélisés par personne. Le projet exigeait d'élaborer une présentation de concept, de modéliser l'ensemble des éléments, puis d'importer le tout dans Unity pour configurer l'éclairage, les caméras et générer les rendus finaux.",
     "descriptionProjet": "J'ai modélisé un feu de circulation, une porte futuriste et une toilette faisant office de table de nuit dans Autodesk Maya, tout en participant au moodboard collectif et à l'esquisse de la pièce. J'ai ensuite collaboré à l'intégration de la scène dans Unity pour configurer l'éclairage, cadrer les caméras et produire les rendus finaux.",
-    "role": "Modélisateurs 3D / Concepteurs d'environnement", "logiciel": "Autodesk Maya & Unity", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
+    "role": "Modélisateurs 3D", "logiciel": "Autodesk Maya & Unity", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
     "coequipiers": ["Cristian Mendoza", "Jonathan Crevier", "Mohamed Sadki", "Jad Saloumi"],
     "processus": [
       {"titre": "Recherche d'idées et direction artistique (Moodboards)", "texte": "Nous avons défini l'univers visuel avec un moodboard global, puis chacun a conçu des moodboards individuels pour ses objets assignés."},

@@ -161,31 +161,14 @@
 	line-height: 1.6;
 }
 
-.hero .bouton--fonce {
+.hero .bouton {
 	width: 177px;
 	height: 44px;
 	min-height: 44px;
 	padding: 12px 32px;
 	font-size: 1rem;
 	letter-spacing: 0.84px;
-	box-shadow: 0 0 12px rgba(198, 172, 143, 0.42);
 	white-space: nowrap;
-	transition: background-color 280ms ease, color 280ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
-}
-
-.hero .bouton--fonce:hover,
-.hero .bouton--fonce:focus-visible {
-	background: rgba(198, 172, 143, 0.75);
-	color: var(--noir-fonce);
-	outline: none;
-	transform: scale(1.04);
-}
-
-.hero .bouton--fonce:active {
-	background: var(--brun-pierre);
-	color: var(--lin-doux);
-	box-shadow: 0 0 12px rgba(94, 80, 63, 0.42), inset 0 2px 5px rgba(10, 9, 8, 0.2);
-	transform: scale(0.95);
 }
 
 .hero__scroll {
@@ -407,6 +390,7 @@
 	font-weight: 400;
 }
 
+
 @media (max-width: 900px) {
 	.site-header {
 		min-height: 196px;
@@ -459,7 +443,7 @@
 		font-size: 0.85rem;
 	}
 
-	.hero .bouton--fonce {
+	.hero .bouton {
 		width: 177px;
 		height: 44px;
 		font-size: 0.85rem;
