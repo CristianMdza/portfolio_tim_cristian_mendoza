@@ -27,7 +27,7 @@
     "description": "Conception collaborative d'un environnement intérieur 3D irréel et humoristique où des objets du quotidien sont détournés de leur fonction initiale.",
     "descriptionDemande": "L'enseignante demandait de concevoir en équipe une scène 3D originale et surréaliste composée d'au moins trois objets modélisés par personne. Le projet exigeait d'élaborer une présentation de concept, de modéliser l'ensemble des éléments, puis d'importer le tout dans Unity pour configurer l'éclairage, les caméras et générer les rendus finaux.",
     "descriptionProjet": "J'ai modélisé un feu de circulation, une porte futuriste et une toilette faisant office de table de nuit dans Autodesk Maya, tout en participant au moodboard collectif et à l'esquisse de la pièce. J'ai ensuite collaboré à l'intégration de la scène dans Unity pour configurer l'éclairage, cadrer les caméras et produire les rendus finaux.",
-    "role": "Modélisateurs 3D", "logiciel": "Autodesk Maya & Unity", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
+    "role": "Modélisateurs 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
     "coequipiers": ["Cristian Mendoza", "Jonathan Crevier", "Mohamed Sadki", "Jad Saloumi"],
     "processus": [
       {"titre": "Recherche d'idées et direction artistique (Moodboards)", "texte": "Nous avons défini l'univers visuel avec un moodboard global, puis chacun a conçu des moodboards individuels pour ses objets assignés."},
@@ -46,7 +46,7 @@
     "description": "Conception et modélisation de Noctar, un personnage animalier humanisé aux formes arrondies et aux couleurs hivernales, au cœur d'un univers fantastique.",
     "descriptionDemande": "Le projet demandait de concevoir un personnage original non réaliste à partir d'un univers librement choisi et de le préparer avec un squelette 3D afin de pouvoir le positionner. Il fallait présenter le concept via une planche de références, modéliser le personnage en T-pose, puis configurer l'éclairage et les caméras dans Unity.",
     "descriptionProjet": "J'ai élaboré le moodboard, le synopsis et l'univers du personnage sur PowerPoint en misant sur des formes arrondies, une palette pastel et une ambiance hivernale. J'ai ensuite modélisé Noctar sous Maya, configuré son rig et son skinning, puis ajusté l'éclairage dans Unity pour créer un effet plastique et glacé.",
-    "role": "Modélisateur 3D", "logiciel": "Autodesk Maya & Unity", "annee": "2024", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
+    "role": "Modélisateur 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
     "imagePrincipale": "assets/images/projet_4/Nouvelle_posture_04.jpg",
     "galerieImages": ["assets/images/projet_4/Nouvelle_posture_04.jpg", "assets/images/projet_4/Nouvelle_posture_01.jpg", "assets/images/projet_4/Nouvelle_posture_02.jpg", "assets/images/projet_4/Nouvelle_posture_03.jpg", "assets/images/projet_4/Posture_t_01.jpg", "assets/images/projet_4/Posture_t_02.jpg", "assets/images/projet_4/Posture_t_03.jpg"]
   },
@@ -57,7 +57,7 @@
     "description": "Création et animation 3D d'un paysage fantastique et mystique au style cartoon, composé de lotus, de sphères suspendues et d'escaliers célestes.",
     "descriptionDemande": "Le projet demandait d'élaborer un environnement 3D complet à partir d'un concept original, incluant la recherche visuelle, la scénarisation, la modélisation et l'animation sous Maya. Il fallait ensuite exporter les séquences et réaliser le montage vidéo final dans DaVinci Resolve avec une bande sonore synchronisée.",
     "descriptionProjet": "J'ai créé le concept sur PowerPoint avec le synopsis, le scénarimage et un style visuel minimaliste aux tons vert pâle. J'ai modélisé et animé les lotus, sphères suspendues et escaliers dans Maya, puis réalisé le montage vidéo final et l'ambiance sonore dans DaVinci Resolve.",
-    "role": "Animateur 3D", "logiciel": "Autodesk Maya & DaVinci Resolve", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
+    "role": "Animateur 3D", "logiciel": "Autodesk Maya", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
     "imagePrincipale": "assets/images/projet_5/Image_couverture_etrange_paradis_emergent.jpg", "galerieImages": [], "video": "assets/videos/projet_5/Etrange_paradis_emergent.mp4"
   },
   {
@@ -66,7 +66,7 @@
     "description": "Création d'une animation générative 3D de 10 secondes au style rétrofuturiste mettant en scène la transformation du logo Kris Musik au rythme de la musique Afrohouse.",
     "descriptionDemande": "Le projet demandait de concevoir une animation générative de 10 secondes à 24 images par seconde en utilisant obligatoirement un système procédural sous Maya comme MASH. Il fallait travailler les matériaux, l'éclairage et le mouvement de la caméra en un seul plan-séquence, puis faire le rendu final sans utiliser de ciel physique de base.",
     "descriptionProjet": "J'ai utilisé le système MASH dans Maya avec les nœuds Replicator, Audio et Random pour animer automatiquement des cubes et révéler mon logo Kris Musik synchronisé avec du son. J'ai créé un décor rétrofuturiste avec un sol en grille néon et des ondes sonores, puis réalisé le rendu et le montage dans DaVinci Resolve.",
-    "role": "Animateur 3D", "logiciel": "Autodesk Maya & DaVinci Resolve", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
+    "role": "Animateur 3D", "logiciel": "Autodesk Maya", "annee": "2025", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
     "imagePrincipale": "assets/images/projet_6/Image_couverture_animation_generative.png", "galerieImages": [], "video": "assets/videos/projet_6/Animation_generative_3d.mp4"
   }
 ]

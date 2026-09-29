@@ -295,7 +295,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1.5px solid rgba(34, 51, 59, 0.7);
+	border: 2px solid rgba(34, 51, 59, 0.7);
 	border-radius: 30px;
 	color: rgba(34, 51, 59, 0.72);
 	font-family: "Poppins", sans-serif;

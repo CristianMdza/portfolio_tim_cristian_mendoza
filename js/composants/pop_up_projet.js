@@ -7,6 +7,11 @@ function creerTags(projet, complet = false) {
 	return cles.map((cle) => `<span>${echapper(projet[cle])}</span>`).join("");
 }
 
+function formaterEtape(texte) {
+	const minuscule = String(texte).toLowerCase();
+	return minuscule.charAt(0).toUpperCase() + minuscule.slice(1);
+}
+
 export function initialiserPopUp(projets) {
 	const modal = document.querySelector("#project-modal");
 	const corps = modal.querySelector(".project-modal__body");
@@ -40,8 +45,8 @@ export function initialiserPopUp(projets) {
 		const media = estVideo
 			? `<video src="${echapper(projet.video)}" controls autoplay playsinline></video>`
 			: `<img src="${echapper(projet.galerieImages[0])}" alt="Aperçu de ${echapper(projet.titre)}">`;
-		const controles = estVideo ? "" : `<button class="modal-project__control modal-project__control--previous" type="button" aria-label="Image précédente" data-media-previous>←</button><button class="modal-project__control modal-project__control--next" type="button" aria-label="Image suivante" data-media-next>→</button><div class="modal-project__dots">${projet.galerieImages.map((_, index) => `<button class="modal-project__dot${index === 0 ? " is-active" : ""}" type="button" aria-label="Afficher l'image ${index + 1}" data-media-index="${index}"></button>`).join("")}</div>`;
-		const processus = projet.processus?.length ? `<div class="modal-project__section"><h4>Processus de création</h4><div class="modal-project__process">${projet.processus.map((etape) => `<div class="modal-project__process-item"><strong>${echapper(etape.titre)}</strong><p>${echapper(etape.texte)}</p></div>`).join("")}</div></div>` : "";
+		const controles = estVideo ? "" : `<button class="modal-project__control modal-project__control--previous" type="button" aria-label="Image précédente" data-media-previous><iconify-icon icon="solar:arrow-left-linear" aria-hidden="true"></iconify-icon></button><button class="modal-project__control modal-project__control--next" type="button" aria-label="Image suivante" data-media-next><iconify-icon icon="solar:arrow-right-linear" aria-hidden="true"></iconify-icon></button><div class="modal-project__dots">${projet.galerieImages.map((_, index) => `<button class="modal-project__dot${index === 0 ? " is-active" : ""}" type="button" aria-label="Afficher l'image ${index + 1}" data-media-index="${index}"></button>`).join("")}</div>`;
+		const processus = projet.processus?.length ? `<div class="modal-project__section"><h4>Processus de création</h4><div class="modal-project__process">${projet.processus.map((etape) => `<div class="modal-project__process-item"><strong>${echapper(formaterEtape(etape.titre))}</strong><p>${echapper(etape.texte)}</p></div>`).join("")}</div></div>` : "";
 
 		corps.innerHTML = `<div class="modal-project__media">${media}${controles}</div><h3 class="modal-project__heading" id="modal-title">${echapper(projet.titre)} <span>– ${echapper(projet.categorie)}</span></h3><div class="modal-project__separator"></div>${projet.synopsis ? `<section class="modal-project__section"><h4>Synopsis</h4><p>${echapper(projet.synopsis)}</p></section>` : ""}<section class="modal-project__section"><h4>Description du projet</h4><p>${echapper(projet.descriptionDemande)}</p></section><section class="modal-project__section"><h4>Description de ma démarche</h4><p>${echapper(projet.descriptionProjet)}</p></section>${processus}<div class="modal-project__tags">${creerTags(projet, true)}</div>`;
 		modal.classList.add("is-open");
@@ -49,7 +54,7 @@ export function initialiserPopUp(projets) {
 		document.body.classList.add("modal-is-open");
 		corps.querySelector(".project-modal__close")?.focus();
 		clearInterval(minuteur);
-		if (!estVideo && projet.galerieImages.length > 1) minuteur = setInterval(() => { indexMedia = (indexMedia + 1) % projet.galerieImages.length; afficherMedia(); }, 3000);
+		if (!estVideo && projet.galerieImages.length > 1) minuteur = setInterval(() => { indexMedia = (indexMedia + 1) % projet.galerieImages.length; afficherMedia(); }, 5000);
 	}
 
 	document.addEventListener("click", (evenement) => {
