@@ -271,6 +271,59 @@ function initialiserAnimationServices() {
 	cartesObserver.observe(grille);
 }
 
+function initialiserAnimationContact() {
+	const section = document.querySelector("#contact");
+	if (!section || typeof window.anime !== "function") return;
+
+	const anime = window.anime;
+	const lignes = section.querySelectorAll(".contact__title-line");
+	const email = section.querySelector(".contact__email");
+	if (lignes.length < 3 || !email) return;
+
+	anime.set(lignes[0], { opacity: 0, translateX: -60 });
+	anime.set(lignes[1], { opacity: 0, translateX: 60 });
+	anime.set(lignes[2], { opacity: 0, translateX: -60 });
+	anime.set(email, { opacity: 0 });
+
+	const timeline = anime.timeline({ autoplay: false });
+	timeline
+		.add({
+			targets: lignes[0],
+			opacity: [0, 1],
+			translateX: [-60, 0],
+			duration: 500,
+			easing: "easeOutCubic"
+		})
+		.add({
+			targets: lignes[1],
+			opacity: [0, 1],
+			translateX: [60, 0],
+			duration: 500,
+			easing: "easeOutCubic"
+		}, "-=200")
+		.add({
+			targets: lignes[2],
+			opacity: [0, 1],
+			translateX: [-60, 0],
+			duration: 500,
+			easing: "easeOutCubic"
+		}, "-=200")
+		.add({
+			targets: email,
+			opacity: [0, 1],
+			duration: 400,
+			easing: "easeOutCubic"
+		}, "-=200");
+
+	const observer = new IntersectionObserver(([entree]) => {
+		if (!entree.isIntersecting) return;
+		timeline.play();
+		observer.unobserve(entree.target);
+	}, { threshold: 0.2 });
+
+	observer.observe(section);
+}
+
 try {
 	const projets = await chargerProjets();
 	grille.innerHTML = projets.map(creerCarteProjet).join("");
@@ -284,4 +337,5 @@ initialiserCarrouselLogiciels();
 initialiserAnimationAPropos();
 initialiserAnimationProjets();
 initialiserAnimationServices();
+initialiserAnimationContact();
 document.fonts.ready.then(animerTitreHero);
