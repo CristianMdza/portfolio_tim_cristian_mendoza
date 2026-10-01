@@ -36,8 +36,8 @@
       {"titre": "Assemblage et préparation de la scène", "texte": "Nous avons rassemblé les éléments afin de vérifier l'assemblage global, les proportions et la préparation de l'exportation."},
       {"titre": "Intégration, éclairage et cadrage dans Unity", "texte": "Nous avons configuré l'éclairage, les caméras et les paramètres de rendu dans Unity pour produire les images finales."}
     ],
-    "imagePrincipale": "assets/images/projet_3/Chambre_rendu.jpg",
-    "galerieImages": ["assets/images/projet_3/Chambre_rendu.jpg", "assets/images/projet_3/Chambre_vue_front_rendu.jpg", "assets/images/projet_3/Chambre_vue_droite_rendu.jpg", "assets/images/projet_3/Chambre_vue_haut_rendu.jpg", "assets/images/projet_3/Feux_circulation_rendu.jpg", "assets/images/projet_3/Porte_futuriste_rendu.jpg", "assets/images/projet_3/Toilette_rendu.jpg"]
+    "imagePrincipale": "assets/images/projet_3/Chambre_vue_front_rendu.jpg",
+    "galerieImages": ["assets/images/projet_3/Chambre_vue_front_rendu.jpg", "assets/images/projet_3/Chambre_rendu.jpg", "assets/images/projet_3/Chambre_vue_droite_rendu.jpg", "assets/images/projet_3/Chambre_vue_haut_rendu.jpg", "assets/images/projet_3/Feux_circulation_rendu.jpg", "assets/images/projet_3/Porte_futuriste_rendu.jpg", "assets/images/projet_3/Toilette_rendu.jpg"]
   },
   {
     "id": 4,
@@ -47,8 +47,8 @@
     "descriptionDemande": "Le projet demandait de concevoir un personnage original non réaliste à partir d'un univers librement choisi et de le préparer avec un squelette 3D afin de pouvoir le positionner. Il fallait présenter le concept via une planche de références, modéliser le personnage en T-pose, puis configurer l'éclairage et les caméras dans Unity.",
     "descriptionProjet": "J'ai élaboré le moodboard, le synopsis et l'univers du personnage sur PowerPoint en misant sur des formes arrondies, une palette pastel et une ambiance hivernale. J'ai ensuite modélisé Noctar sous Maya, configuré son rig et son skinning, puis ajusté l'éclairage dans Unity pour créer un effet plastique et glacé.",
     "role": "Modélisateur 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
-    "imagePrincipale": "assets/images/projet_4/Nouvelle_posture_04.jpg",
-    "galerieImages": ["assets/images/projet_4/Nouvelle_posture_04.jpg", "assets/images/projet_4/Nouvelle_posture_01.jpg", "assets/images/projet_4/Nouvelle_posture_02.jpg", "assets/images/projet_4/Nouvelle_posture_03.jpg", "assets/images/projet_4/Posture_t_01.jpg", "assets/images/projet_4/Posture_t_02.jpg", "assets/images/projet_4/Posture_t_03.jpg"]
+    "imagePrincipale": "assets/images/projet_4/Nouvelle_posture_02.jpg",
+    "galerieImages": ["assets/images/projet_4/Nouvelle_posture_02.jpg", "assets/images/projet_4/Nouvelle_posture_01.jpg", "assets/images/projet_4/Nouvelle_posture_03.jpg", "assets/images/projet_4/Nouvelle_posture_04.jpg", "assets/images/projet_4/Posture_t_01.jpg", "assets/images/projet_4/Posture_t_02.jpg", "assets/images/projet_4/Posture_t_03.jpg"]
   },
   {
     "id": 5,
