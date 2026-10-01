@@ -141,6 +141,70 @@ function initialiserAnimationAPropos() {
 	observer.observe(section);
 }
 
+function initialiserAnimationProjets() {
+	const section = document.querySelector("#projets");
+	if (!section || typeof window.anime !== "function") return;
+
+	const anime = window.anime;
+	const titre = section.querySelector(".projects__title");
+	const cartes = [...section.querySelectorAll(".project-card")];
+
+	if (titre) {
+		anime.set(titre, { opacity: 0, translateX: -60 });
+		const titreObserver = new IntersectionObserver(([entree]) => {
+			if (!entree.isIntersecting) return;
+			anime({
+				targets: titre,
+				opacity: [0, 1],
+				translateX: [-60, 0],
+				duration: 500,
+				easing: "easeOutCubic"
+			});
+			titreObserver.unobserve(entree.target);
+		}, { threshold: 0.2 });
+
+		titreObserver.observe(titre);
+	}
+
+	cartes.forEach((carte, index) => {
+		const media = carte.querySelector(".project-card__media");
+		const contenu = carte.querySelectorAll(".project-card__title, .project-card__description");
+		const footer = carte.querySelector(".project-card__footer");
+		const decalage = index % 2 === 0 ? -60 : 60;
+
+		anime.set(media, { opacity: 0, translateX: decalage });
+		anime.set(contenu, { opacity: 0, translateY: 20 });
+		anime.set(footer, { opacity: 0, scale: 0.95 });
+
+		const carteObserver = new IntersectionObserver(([entree]) => {
+			if (!entree.isIntersecting) return;
+			anime.timeline({ easing: "easeOutCubic" })
+				.add({
+					targets: media,
+					opacity: [0, 1],
+					translateX: [decalage, 0],
+					duration: 500
+				})
+				.add({
+					targets: contenu,
+					opacity: [0, 1],
+					translateY: [20, 0],
+					delay: anime.stagger(60),
+					duration: 400
+				}, "-=300")
+				.add({
+					targets: footer,
+					opacity: [0, 1],
+					scale: [0.95, 1],
+					duration: 300
+				}, "-=200");
+			carteObserver.unobserve(entree.target);
+		}, { threshold: 0.3, rootMargin: "0px 0px -50px 0px" });
+
+		carteObserver.observe(carte);
+	});
+}
+
 try {
 	const projets = await chargerProjets();
 	grille.innerHTML = projets.map(creerCarteProjet).join("");
@@ -152,4 +216,5 @@ try {
 
 initialiserCarrouselLogiciels();
 initialiserAnimationAPropos();
+initialiserAnimationProjets();
 document.fonts.ready.then(animerTitreHero);

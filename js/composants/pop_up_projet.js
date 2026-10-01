@@ -58,13 +58,24 @@ export function initialiserPopUp(projets) {
 	}
 
 	document.addEventListener("click", (evenement) => {
-		const bouton = evenement.target.closest("[data-project-id]");
+		const bouton = evenement.target.closest(".project-card__button[data-project-id]");
 		if (bouton) ouvrir(projets.find((projet) => String(projet.id) === bouton.dataset.projectId));
 		if (evenement.target.closest("[data-modal-close]")) fermer();
 		if (evenement.target.closest("[data-media-next]")) { indexMedia = (indexMedia + 1) % projetActif.galerieImages.length; afficherMedia(); }
 		if (evenement.target.closest("[data-media-previous]")) { indexMedia = (indexMedia - 1 + projetActif.galerieImages.length) % projetActif.galerieImages.length; afficherMedia(); }
 		const point = evenement.target.closest("[data-media-index]");
 		if (point) { indexMedia = Number(point.dataset.mediaIndex); afficherMedia(); }
+	});
+
+	document.querySelectorAll(".project-card__media[data-project-id]").forEach((media) => {
+		const ouvrirProjet = () => ouvrir(projets.find((projet) => String(projet.id) === media.dataset.projectId));
+		media.addEventListener("click", ouvrirProjet);
+		media.addEventListener("keydown", (evenement) => {
+			if (evenement.key === "Enter" || evenement.key === " ") {
+				evenement.preventDefault();
+				ouvrirProjet();
+			}
+		});
 	});
 
 	document.addEventListener("keydown", (evenement) => {
