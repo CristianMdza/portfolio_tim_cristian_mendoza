@@ -74,10 +74,16 @@
 	height: auto;
 	min-height: 0;
 	margin-bottom: 14px;
-	border: 2px solid rgba(198, 172, 143, 0.6);
+	border: 3px solid rgba(198, 172, 143, 0.6);
 	border-radius: 5px;
 	cursor: pointer;
 	overflow: hidden;
+	transition: border-color 220ms ease;
+}
+
+.project-card:hover .project-card__media,
+.project-card:focus-within .project-card__media {
+	border-color: var(--tan);
 }
 
 .project-card__media img {

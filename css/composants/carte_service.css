@@ -56,25 +56,9 @@
 .service-card {
 	min-height: 174px;
 	padding: 25px 24px 22px;
-	border: 2px solid rgba(198, 172, 143, 0.6);
+	border: 3px solid rgba(198, 172, 143, 0.6);
 	border-radius: 30px;
-	opacity: 0;
-	transform: translateY(18px) scale(0.98);
-	animation: service-card-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-	transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
-}
-
-.service-card:nth-child(2) { animation-delay: 90ms; }
-.service-card:nth-child(3) { animation-delay: 180ms; }
-.service-card:nth-child(4) { animation-delay: 270ms; }
-.service-card:nth-child(5) { animation-delay: 360ms; }
-.service-card:nth-child(6) { animation-delay: 450ms; }
-
-.service-card:hover,
-.service-card:focus-within {
-	border-color: var(--tan);
-	background: rgba(198, 172, 143, 0.05);
-	transform: translateY(-5px) scale(1.035);
+	will-change: opacity;
 }
 
 .service-card__icon {
@@ -111,16 +95,8 @@
 	line-height: 1.4;
 }
 
-@keyframes service-card-reveal {
-	to {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-	}
-}
-
 @media (prefers-reduced-motion: reduce) {
 	.service-card {
-		animation: none;
 		opacity: 1;
 		transform: none;
 		transition: none;

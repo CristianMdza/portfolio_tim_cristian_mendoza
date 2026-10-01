@@ -205,6 +205,72 @@ function initialiserAnimationProjets() {
 	});
 }
 
+function initialiserAnimationServices() {
+	const section = document.querySelector("#services");
+	if (!section || typeof window.anime !== "function") return;
+
+	const anime = window.anime;
+	const titre = section.querySelector(".services__title");
+	const lignesTitre = section.querySelectorAll(".services__title > span");
+	const grille = section.querySelector(".services__grid");
+	const cartes = [...section.querySelectorAll(".service-card")];
+	if (!titre || lignesTitre.length < 2 || !grille || !cartes.length) return;
+
+	anime.set(lignesTitre[0], { opacity: 0, translateX: -60 });
+	anime.set(lignesTitre[1], { opacity: 0, translateX: 60 });
+	anime.set(cartes, { opacity: 0 });
+
+	const titreAnimation = anime.timeline({ autoplay: false });
+	titreAnimation
+		.add({
+			targets: lignesTitre[0],
+			opacity: [0, 1],
+			translateX: [-60, 0],
+			duration: 500,
+			easing: "easeOutCubic"
+		})
+		.add({
+			targets: lignesTitre[1],
+			opacity: [0, 1],
+			translateX: [60, 0],
+			duration: 500,
+			easing: "easeOutCubic"
+		}, "-=300");
+
+	let titreTermine = false;
+	const afficherCartes = () => {
+		anime({
+			targets: cartes,
+			opacity: [0, 1],
+			delay: anime.stagger(100),
+			duration: 500,
+			easing: "easeOutCubic"
+		});
+	};
+
+	const titreObserver = new IntersectionObserver(([entree]) => {
+		if (!entree.isIntersecting) return;
+		titreAnimation.play();
+		titreAnimation.finished.then(() => {
+			titreTermine = true;
+		});
+		titreObserver.unobserve(entree.target);
+	}, { threshold: 0.2 });
+
+	const cartesObserver = new IntersectionObserver(([entree]) => {
+		if (!entree.isIntersecting) return;
+		if (titreTermine) {
+			afficherCartes();
+		} else {
+			titreAnimation.finished.then(afficherCartes);
+		}
+		cartesObserver.unobserve(entree.target);
+	}, { threshold: 0.3, rootMargin: "0px 0px -50px 0px" });
+
+	titreObserver.observe(titre);
+	cartesObserver.observe(grille);
+}
+
 try {
 	const projets = await chargerProjets();
 	grille.innerHTML = projets.map(creerCarteProjet).join("");
@@ -217,4 +283,5 @@ try {
 initialiserCarrouselLogiciels();
 initialiserAnimationAPropos();
 initialiserAnimationProjets();
+initialiserAnimationServices();
 document.fonts.ready.then(animerTitreHero);
