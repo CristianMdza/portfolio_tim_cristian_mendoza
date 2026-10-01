@@ -43,7 +43,7 @@
 	position: absolute;
 	top: 12px;
 	right: 12px;
-	z-index: 2;
+	z-index: 10;
 	display: grid;
 	width: 36px;
 	height: 36px;
@@ -118,6 +118,8 @@
 	line-height: 1;
 	transform: translateY(-50%);
 	cursor: pointer;
+	box-shadow: 0 0 18px rgba(198, 172, 143, 0.24);
+	transition: all 0.25s ease;
 }
 
 .modal-project__control iconify-icon {
@@ -130,6 +132,22 @@
 
 .modal-project__control--previous { left: 12px; }
 .modal-project__control--next { right: 12px; }
+
+.modal-project__control:hover,
+.modal-project__control:focus-visible {
+	background: #C6AC8F;
+	color: #EAE0D5;
+	transform: translateY(-50%) scale(1.08);
+	box-shadow: 0 0 18px rgba(198, 172, 143, 0.36);
+	outline: none;
+}
+
+.modal-project__control:active {
+	background: #5E503F;
+	color: #EAE0D5;
+	transform: translateY(-50%) scale(0.95);
+	box-shadow: 0 0 14px rgba(94, 80, 63, 0.42), inset 0 2px 5px rgba(10, 9, 8, 0.2);
+}
 
 .modal-project__dots {
 	position: absolute;
