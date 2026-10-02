@@ -209,3 +209,42 @@ CSS Layout : Utilise gap: 60px sur le conteneur parent au lieu de marges individ
 Animation @keyframes : Configure le décalage sur la valeur exacte calculée en pixels par rapport aux items et aux gaps : translate3d(-1980px, 0, 0) avec une durée de 22s en linear infinite. »*
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** L'animation de défilement infini (infinite loop scroll) est devenue fluide. La transition entre le 9e logiciel (Reaper) et le retour au 1er (Godot) s'est fait avec un pétit saut, clignotement ou ralentissement, mais au moins ça donne un bon résultat.
+
+### *Section #8 (Pied de page/Footer)*
+
+#### *Esthétique, Structure & Effets*
+
+- **Date :** 28-Septembre-2026 
+- **Prompt 1 (Principal) :** *« J’ai besoin que tu me fasses la huitième section de mon site web portfolio qui est la section « Pied de page » connue comme le footer. Fais la telle quelle les captures d’écran que je t’envoie sur mon désign esthétique sur figma. N’oublie jamais d’utiliser la bonne palette de couleur que j’ai déjà, c’est cela : #0A0908, #22333B, #EAE0D5, #C6AC8F et #5E503F. Oublie pas aussi que j’ai seulement deux types de typo : Playfair Display et Poppins. Comme tu vois dans une des captures d’écran, le fond de ma section est « #0A0908 ». On voit en premier mon nom logo avec la typo « Playfair display, Bold italic » avec une taille de 18px et en lettre majuscules, ce nom logo a la couleur « #EAE0D5, 70% d’opacité ». Ensuite on mon numéro de téléphone qui serait exactement comme ça : +1 (438) 227 - 3449, le numéro fais le avec la typo « Poppins, Regular » avec une taille de 16 px et la couleur « #EAE0D5, 70% d’opacité ». Après on a la localisation « Laval • Grand Montréal » avec une typo « Poppins, Regular » avec une taille de 16 px et la couleur « #EAE0D5, 70% d’opacité ». Ensuite on a trois icones qui sont ceux de Github et Linkedin. Je les ai sorti d’Iconify figma. Je veux les mêmes icônes que j’ai y mis. Ces icônes ont la couleur « #EAE0D5, 70% d’opacité ». Après ça on trouve une ligne séparatrice de la section pour ensuite montrer le droits d’auteur, cette ligne là occupe pas toute la section comme tu vois, ses dimensions sont W: 457px et H: 2 px, avec un corner radius de 30px partout pour q ça soit arrondie et elle a la couleur « #5E503F, 70% d’opacité ». Et finalement, on a les droits d’auteur ci dessous, ça dit « © 2026 Portfolio Christian Mendoza. Tous droits réservés. » avec la typo « Poppins, Regular » avec une taille de 14 px et la couleur « #5E503F, 100% d’opacité », toutes ces informations sont bien centrés dans la section, pis comme tu vois la section tant telle a des marges internes aussi. Je veux que lorsque on click sur mon nom logo de mon pied page, ça remonte vers le haut, donc ça reviendrai au Hero, je veux pas q ça soit un refresh de page, sinon ça ca fait un genre de défilement automatique vers le haut. Je veux aussi que quand on click sur le téléphone ça s’adresse vers l’option appeler, comme ça les clients ont pas besoin de copier et coller mon numéro manuellement. Voici le lien vers compte Linkedin : www.linkedin.com/in/cristian-mendoza-b38631216 ; et voici le lien vers mon compte github : https://github.com/CristianMdza »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Copilot a généré les fichiers de base (index.html et pied_de_page.css). Il a bien mis les liens interactifs comme le scroll fluide vers le Hero (#hero) lorsqu'on clic sur le nom logo au pied de page. Quand on clic au tel:+14382273449 ça s'envoie direct pour appeler et les accès aux réseaux sociaux. Par contre, les icônes des réseaux sociaux étaient vraiment trop petites et le padding vertical était mal ajusté, ce qui laissait beaucoup trop d'espace vide vers le bas du pied de page. 
+
+- **Date :** 01-Octobre-2026 
+- **Prompt 2 (Remplacement des icônes & Structure CSS) :** *« Peux-tu corriger la section .site-footer dans index.html et css/composants/pied_de_page.css pour qu'elle corresponde exactement à ma maquette Figma ?
+Structure et dimensions (CSS) : Hauteur fixe à min-height: 250px; (comme la section .software), centrage global avec display: flex; flex-direction: column; align-items: center; justify-content: center; et padding: 30px 20px;. Bon espacement vertical (gap: 12px;) entre tous les éléments.
+Remplacement et agrandissement des icônes (HTML & CSS) : Remplacement par  et  avec une taille agrandie (font-size: 28px;).
+Couleurs et styles : Fond #0A0908 et ligne séparatrice fine et centrée. »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Les icônes ont été correctement remplacées dans le HTML par leurs versions officielles Devicon et le conteneur principal a été structuré en Flexbox. La hauteur de 250px a été appliquée, mais la taille visuelle de l'icône LinkedIn manquait encore d'équilibre par rapport à GitHub.
+
+- **Date :** 01-Octobre-2026 
+- **Prompt 3 (Ajustement de la couleur et équilibrage visuel de LinkedIn) :** *« Peux-tu mettre à jour css/composants/pied_de_page.css pour appliquer les effets de survol/clic et rééquilibrer la taille de l'icône LinkedIn par rapport à GitHub ?
+Ajustement individuel de la taille des icônes : LinkedIn (devicon-plain:linkedin-wordmark) a un format horizontal et paraît plus petite. Cible-la spécifiquement à font-size: 42px; (ou 44px) pour qu'elle s'aligne visuellement avec GitHub (gardée à 32px-36px).
+Force la couleur unie #EAE0D5 à 70% d'opacité (rgba(234, 224, 213, 0.7)) avec un filtre SVG si nécessaire.
+États interactifs : Par défaut opacity: 0.7; avec transition fluide (transition: opacity 0.3s ease, color 0.2s ease, transform 0.2s ease;). Au survol (:hover), opacity: 1;. Au clic (:active), passage à la couleur dorée #C6AC8F. »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** L'icône LinkedIn a enfin pris la bonne proportion à côté de l'icône GitHub. La couleur monochrome #EAE0D5 à 70% d'opacité s'est appliquée correctement sur l'ensemble des éléments SVG.
+
+**Date :** 01-Octobre-2026 
+- **Prompt 4 (Ajustement strict de l'espacement gap: 17px & Padding) :** *« Peux-tu mettre à jour le fichier css/composants/pied_de_page.css pour ajuster les dimensions globales, le rembourrage interne (padding) et les espacements du footer selon ma maquette Figma ?
+Dimensions et marges internes : Section à max-width: 1440px;, min-height: 300px;, centrage horizontal (margin: 0 auto;), et padding vertical explicite (padding: 40px 20px;) pour garantir un espace respirant au-dessus et en dessous.
+Espacements stricts à 17px (Flexbox / Gap) : Applique un espacement vertical exact de gap: 17px; entre chaque niveau d'élément (nom ➔ tel ➔ ville ➔ icônes ➔ ligne ➔ copyright) et remets à zéro les marges HTML par défaut (margin: 0;). »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Le résultat visuel de mon pied de page sur navigateur est devenu identique à la maquette Figma. L'utilisation de gap: 17px; sans marges HTML parasites a permis d'obtenir un espacement régulier et aéré entre tous les textes, la ligne et les icônes.
+
+**Date :** 01-Octobre-2026 
+- **Prompt 5 (Unification des micro-interactions :hover / :active avec effet scale) :** *« Peux-tu mettre à jour css/composants/pied_de_page.css pour unifier les effets de survol (:hover) et de clic (:active) sur le nom/logo, le numéro de téléphone et les icônes (GitHub / LinkedIn) ?
+Transitions et animations de zoom : Ajoute transition: transform 0.2s ease, opacity 0.3s ease, color 0.2s ease;. Au survol (:hover), applique un léger agrandissement identique au header : transform: scale(1.05); avec opacity: 1;.
+Unification des couleurs : Par défaut rgba(234, 224, 213, 0.7), au survol opacity: 1; avec le zoom, et au clic (:active), passage au doré #C6AC8F (avec fill: currentColor; / color: inherit; pour forcer les icônes). »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Toutes les interactions du pied de page sont devenues dynamiques et cohérentes avec le reste du site. Le nom, le téléphone et les icônes réagissent de manière uniforme avec le léger zoom (scale(1.05)), l'opacité à 100% au survol et le retour visuel doré #C6AC8F lors du clic.
