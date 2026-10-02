@@ -240,7 +240,7 @@ Force la couleur unie #EAE0D5 à 70% d'opacité (rgba(234, 224, 213, 0.7)) avec 
 Dimensions et marges internes : Section à max-width: 1440px;, min-height: 300px;, centrage horizontal (margin: 0 auto;), et padding vertical explicite (padding: 40px 20px;) pour garantir un espace respirant au-dessus et en dessous.
 Espacements stricts à 17px (Flexbox / Gap) : Applique un espacement vertical exact de gap: 17px; entre chaque niveau d'élément (nom ➔ tel ➔ ville ➔ icônes ➔ ligne ➔ copyright) et remets à zéro les marges HTML par défaut (margin: 0;). »*
 - **Outil :** GitHub Copilot IA  
-- **Résultat :** Le résultat visuel de mon pied de page sur navigateur est devenu identique à la maquette Figma. L'utilisation de gap: 17px; sans marges HTML parasites a permis d'obtenir un espacement régulier et aéré entre tous les textes, la ligne et les icônes.
+- **Résultat :** Le résultat visuel de mon pied de page sur navigateur est devenu identique à la maquette Figma. L'utilisation de gap: 17px; sans marges HTML parasites a permis d'obtenir un espacement régulier et aligné entre tous les textes, la ligne et les icônes.
 
 **Date :** 01-Octobre-2026 
 - **Prompt 5 (Unification des micro-interactions :hover / :active avec effet scale) :** *« Peux-tu mettre à jour css/composants/pied_de_page.css pour unifier les effets de survol (:hover) et de clic (:active) sur le nom/logo, le numéro de téléphone et les icônes (GitHub / LinkedIn) ?
