@@ -95,8 +95,8 @@ Oui, j'ai utilisé l'IA (Figma Make) pour explorer des idées de mise en page et
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a créé une timeline « Anime.js » déclenchée par un « IntersectionObserver » unique dans « main.js ». Tous les éléments s'animent selon la séquence demandée (glissements du titre, apparition progressive des paragraphes et de la photo, compteur de 0 à 3 et remplissage des barres de progression).
 
-- **Date :** 27-Septembre-2026 
-**Prompt 2 (Synchronisation des pourcentages des compétences) :** *« J'ai oublié de te dire que je veux que les pourcentages affichés à côté des titres de compétences commencent à 0% et se remplissent en même temps que la barre de progression. »*   
+- **Date :** 27-Septembre-2026
+- **Prompt 2 (Synchronisation des pourcentages des compétences) :** *« J'ai oublié de te dire que je veux que les pourcentages affichés à côté des titres de compétences commencent à 0% et se remplissent en même temps que la barre de progression. »*   
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a mis à jour la fonction « initialiserAnimationAPropos() » dans « main.js » en animant dynamiquement l'objet de progression (« valeur.nombre »). Les étiquettes de pourcentage démarrent à 0% et comptent jusqu'à leurs valeurs finales (95%, 90%, 85%, 78%, 82%) en parfaite synchronisation avec l'extension de largeur des barres.
 
