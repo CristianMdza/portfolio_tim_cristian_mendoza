@@ -180,3 +180,32 @@ Séquence d'apparition souhaitée :
 Garde le sur-titre 'CONTACT' et le bouton 'ME CONTACTER' fixes (sans animation). »*
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a relié les classes CSS d'animation au script JS de l'IntersectionObserver. Dès qu'on arrive sur la section Contact au défilement, le grand titre s'anime ligne par ligne en alternant gauche et droite, puis mon courriel apparaît tout en douceur avec un fondu d'opacité simple.
+
+### *Section #7 (Logiciels)*
+
+#### *Esthétique, Structure & Effets*
+
+- **Date :** 28-Septembre-2026 
+- **Prompt 1 (Principal) :** *« Maintenant, J’ai besoin que tu me fasses la septième section de mon site web portfolio qui est la section « Logiciels ». Fais la telle quelle les captures d’écran que je t’envoie sur mon désign esthétique sur figma. N’oublie jamais d’utiliser la bonne palette de couleur que j’ai déjà, c’est cela : #0A0908, #22333B, #EAE0D5, #C6AC8F et #5E503F. Oublie pas aussi que j’ai seulement deux types de typo : Playfair Display et Poppins. Comme tu vois dans une des captures d’écran, le fond de ma section est « #22333B ». Cette section a pas de menu de navigation [...] c’est juste une petite section qui est avant le footer. Comme tu vois dans les captures d’écran que je t’envoie, c’est un carrousel automatique qui montre les logiciels que je maîtrise. Donc on trouve un premier texte qui est le petit titre en majuscule de la section qui dit « Logiciels maitrisés » et qui contient la typographie « Poppins, Medium » avec une taille de 16px et la couleur « #C6AC8F ». Ensuite on trouve le carrossel automatique des logiciels avec leurs titres respectifs. Les dimensions des icons est de W: 40px et H: 40px, ce sont des icons qui vient de Iconify, qui ont tous la meme couleur « #EAE0D5 », pis chaque titre qui leurs appartient est avec la typographie « Poppins, light » avec une taille de 16px pis en lettre minuscule [...] Je veux que l’ordre des logiciels soit le meme comme dans la capture d'écran [...] Les icons de logiciels doivent etre ceux de Godot, After effects, Maya, Photoshop, Figma, Illustrator, Unity, Davinci et Reaper. »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Copilot a généré la structure dans « index.html », « main.js » et « logiciels.css ». Cependant, le rendu comportait plusieurs bugs importants, comme par exemple certaines icônes (Godot, DaVinci, Reaper) y manquaient, les cartes d'icônes étaient réduites, et l'animation faisait sauter tout le carrousel vers la gauche arrivé aux derniers éléments au lieu de boucler de manière continue.
+
+- **Date :** 01-Octobre-2026 
+- **Prompt 2 (Ajustements d'esthétiques & ajustement des icônes) :** *« J'aimerais corriger et refondre complètement la section Logiciels (.software / #logiciels) en HTML et CSS pour qu'elle corresponde exactement à ma maquette Figma (1440 × 250 px).
+Dimensions et Style : Hauteur fixe de 250px, fond #22333B, et titre 'LOGICIELS MAÎTRISÉS' en Poppins Medium #C6AC8F centré verticalement avec un espacement suffisant.
+Alignement & Couleur unique : Chaque carte doit afficher l'icône centrée au-dessus de son nom (Poppins Light 16px rgba(234, 224, 214, 0.6)). Applique la couleur uniforme #EAE0D5 sur toutes les icônes (y compris Figma et DaVinci) et ajuste la taille de Reaper pour qu'elle s'aligne visuellement sur les autres.
+Dégradés latéraux : Ajoute deux calques d'ombrage fixes à gauche et à droite (largeur 260px) avec des dégradés linéaires vers #0A0908 pour créer un effet d'estompage progressif sur les bords.
+Ordre exact : Godot, After Effects, Maya, Photoshop, Figma, Illustrator, Unity, DaVinci Resolve, Reaper. »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** Le visuel de ma section logiels s'est amélioré. les 9 icônes étaient toutes affichées avec la même teinte #EAE0D5, disposées à la verticale au-dessus de leur nom. Les overlays de dégradés sur les côtés ont été ajoutés pour créer l'effet d'adoucissement, et la section respectait enfin les dimensions en hauteur.
+
+#### *Animation(s)*
+
+- **Date :** 01-Octobre-2026 
+- **Prompt 1 (Animation de défilement infini sans saut / pixel-perfect) :** *« J'ai identifié la cause exacte du clignotement/saut à la fin de la boucle dans logiciels.css. Le problème vient de l'utilisation de margin-right combinée avec translateX(-50%).
+Pour supprimer définitivement ce saut et rendre le défilement 100% continu et fluide :
+Structure HTML : Duplique exactement la liste des 9 logiciels une fois dans le conteneur flex .software__track (soit 18 éléments au total).
+CSS Layout : Utilise gap: 60px sur le conteneur parent au lieu de marges individuelles, fixe la largeur de chaque item à 160px avec flex-shrink: 0, et ajoute l'accélération matérielle GPU (will-change: transform; transform: translate3d(0,0,0)).
+Animation @keyframes : Configure le décalage sur la valeur exacte calculée en pixels par rapport aux items et aux gaps : translate3d(-1980px, 0, 0) avec une durée de 22s en linear infinite. »*
+- **Outil :** GitHub Copilot IA  
+- **Résultat :** L'animation de défilement infini (infinite loop scroll) est devenue fluide. La transition entre le 9e logiciel (Reaper) et le retour au 1er (Godot) s'est fait avec un pétit saut, clignotement ou ralentissement, mais au moins ça donne un bon résultat.
