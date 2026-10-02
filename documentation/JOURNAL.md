@@ -91,17 +91,12 @@ Oui, j'ai utilisé l'IA (Figma Make) pour explorer des idées de mise en page et
 #### *Animation(s)*
 
 - **Date :** 27-Septembre-2026 
-- **Prompt 1 (Séquence d'apparition globale) :** *« Je veux créer une séquence d'animations fluide avec « Anime.js » (et/ou IntersectionObserver) pour la section « À propos » de mon portfolio. L'animation doit se déclencher uniquement lorsque la section devient visible à l'écran (au défilement / scroll ou lors du clic sur le lien de navigation « À propos »). Voici la séquence exacte à exécuter :  
-1. Déclencheur : Utiliser un IntersectionObserver sur la section « #a-propos » pour ne lancer la timeline d'animation qu'une seule fois lorsque la section apparaît.  
-2. Étape 1 - Titre principal : Text « UNE VISION » en fondu (opacity 0 à 1) + glissement depuis la gauche (translateX -50px à 0), et text « SINGULIÈRE » en fondu + glissement depuis la droite (translateX 50px à 0) immédiatement après.  
-3. Étape 2 - Paragraphes : Dès que « SINGULIÈRE » est apparu, faire apparaître les paragraphes avec un fondu et léger glissement depuis la gauche (translateX -30px à 0).  
-4. Étape 3 - Photo & Compteur : Photo de profil en fondu doux (opacity 0 à 1) et badge « 3+ Années d'expérience » avec le chiffre qui compte progressivement de 0+ à 3+.  
-5. Étape 4 - Barres de compétences : Animer les barres de manière séquentielle pour que leur largeur (« width ») s'étende de 0% jusqu'à leur valeur finale.»* 
+- **Prompt 1 (Séquence d'apparition globale) :** *« Je veux créer une séquence d'animations fluide avec « Anime.js » (et/ou IntersectionObserver) pour la section « À propos » de mon portfolio. L'animation doit se déclencher uniquement lorsque la section devient visible à l'écran (au défilement / scroll ou lors du clic sur le lien de navigation « À propos »). Voici la séquence exacte à exécuter ; Déclencheur : Utiliser un IntersectionObserver sur la section « #a-propos » pour ne lancer la timeline d'animation qu'une seule fois lorsque la section apparaît. Étape 1 - Titre principal : Text « UNE VISION » en fondu (opacity 0 à 1) + glissement depuis la gauche (translateX -50px à 0), et text « SINGULIÈRE » en fondu + glissement depuis la droite (translateX 50px à 0) immédiatement après. Étape 2 - Paragraphes : Dès que « SINGULIÈRE » est apparu, faire apparaître les paragraphes avec un fondu et léger glissement depuis la gauche (translateX -30px à 0). Étape 3 - Photo & Compteur : Photo de profil en fondu doux (opacity 0 à 1) et badge « 3+ Années d'expérience » avec le chiffre qui compte progressivement de 0+ à 3+. Étape 4 - Barres de compétences : Animer les barres de manière séquentielle pour que leur largeur (« width ») s'étende de 0% jusqu'à leur valeur finale. »* 
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a créé une timeline « Anime.js » déclenchée par un « IntersectionObserver » unique dans « main.js ». Tous les éléments s'animent selon la séquence demandée (glissements du titre, apparition progressive des paragraphes et de la photo, compteur de 0 à 3 et remplissage des barres de progression).
 
-- **Date :** 27-Septembre-2026 
-**Prompt 2 (Synchronisation des pourcentages des compétences) :** *« J'ai oublié de te dire que je veux que les pourcentages affichés à côté des titres de compétences commencent à 0% et se remplissent en même temps que la barre de progression. »*   
+- **Date :** 27-Septembre-2026
+- **Prompt 2 (Synchronisation des pourcentages des compétences) :** *« J'ai oublié de te dire que je veux que les pourcentages affichés à côté des titres de compétences commencent à 0% et se remplissent en même temps que la barre de progression. »*   
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a mis à jour la fonction « initialiserAnimationAPropos() » dans « main.js » en animant dynamiquement l'objet de progression (« valeur.nombre »). Les étiquettes de pourcentage démarrent à 0% et comptent jusqu'à leurs valeurs finales (95%, 90%, 85%, 78%, 82%) en parfaite synchronisation avec l'extension de largeur des barres.
 
@@ -235,14 +230,14 @@ Force la couleur unie #EAE0D5 à 70% d'opacité (rgba(234, 224, 213, 0.7)) avec 
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** L'icône LinkedIn a enfin pris la bonne proportion à côté de l'icône GitHub. La couleur monochrome #EAE0D5 à 70% d'opacité s'est appliquée correctement sur l'ensemble des éléments SVG.
 
-**Date :** 01-Octobre-2026 
+- **Date :** 01-Octobre-2026 
 - **Prompt 4 (Ajustement strict de l'espacement gap: 17px & Padding) :** *« Peux-tu mettre à jour le fichier css/composants/pied_de_page.css pour ajuster les dimensions globales, le rembourrage interne (padding) et les espacements du footer selon ma maquette Figma ?
 Dimensions et marges internes : Section à max-width: 1440px;, min-height: 300px;, centrage horizontal (margin: 0 auto;), et padding vertical explicite (padding: 40px 20px;) pour garantir un espace respirant au-dessus et en dessous.
 Espacements stricts à 17px (Flexbox / Gap) : Applique un espacement vertical exact de gap: 17px; entre chaque niveau d'élément (nom ➔ tel ➔ ville ➔ icônes ➔ ligne ➔ copyright) et remets à zéro les marges HTML par défaut (margin: 0;). »*
 - **Outil :** GitHub Copilot IA  
-- **Résultat :** Le résultat visuel de mon pied de page sur navigateur est devenu identique à la maquette Figma. L'utilisation de gap: 17px; sans marges HTML parasites a permis d'obtenir un espacement régulier et aéré entre tous les textes, la ligne et les icônes.
+- **Résultat :** Le résultat visuel de mon pied de page sur navigateur est devenu identique à la maquette Figma. L'utilisation de gap: 17px; sans marges HTML parasites a permis d'obtenir un espacement régulier et aligné entre tous les textes, la ligne et les icônes.
 
-**Date :** 01-Octobre-2026 
+- **Date :** 01-Octobre-2026 
 - **Prompt 5 (Unification des micro-interactions :hover / :active avec effet scale) :** *« Peux-tu mettre à jour css/composants/pied_de_page.css pour unifier les effets de survol (:hover) et de clic (:active) sur le nom/logo, le numéro de téléphone et les icônes (GitHub / LinkedIn) ?
 Transitions et animations de zoom : Ajoute transition: transform 0.2s ease, opacity 0.3s ease, color 0.2s ease;. Au survol (:hover), applique un léger agrandissement identique au header : transform: scale(1.05); avec opacity: 1;.
 Unification des couleurs : Par défaut rgba(234, 224, 213, 0.7), au survol opacity: 1; avec le zoom, et au clic (:active), passage au doré #C6AC8F (avec fill: currentColor; / color: inherit; pour forcer les icônes). »*
