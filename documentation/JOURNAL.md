@@ -92,11 +92,11 @@ Oui, j'ai utilisé l'IA (Figma Make) pour explorer des idées de mise en page et
 
 - **Date :** 27-Septembre-2026 
 - **Prompt 1 (Séquence d'apparition globale) :** *« Je veux créer une séquence d'animations fluide avec « Anime.js » (et/ou IntersectionObserver) pour la section « À propos » de mon portfolio. L'animation doit se déclencher uniquement lorsque la section devient visible à l'écran (au défilement / scroll ou lors du clic sur le lien de navigation « À propos »). Voici la séquence exacte à exécuter :  
-- Déclencheur : Utiliser un IntersectionObserver sur la section « #a-propos » pour ne lancer la timeline d'animation qu'une seule fois lorsque la section apparaît.  
--- Étape 1 - Titre principal : Text « UNE VISION » en fondu (opacity 0 à 1) + glissement depuis la gauche (translateX -50px à 0), et text « SINGULIÈRE » en fondu + glissement depuis la droite (translateX 50px à 0) immédiatement après.  
--- Étape 2 - Paragraphes : Dès que « SINGULIÈRE » est apparu, faire apparaître les paragraphes avec un fondu et léger glissement depuis la gauche (translateX -30px à 0).  
--- Étape 3 - Photo & Compteur : Photo de profil en fondu doux (opacity 0 à 1) et badge « 3+ Années d'expérience » avec le chiffre qui compte progressivement de 0+ à 3+.  
--- Étape 4 - Barres de compétences : Animer les barres de manière séquentielle pour que leur largeur (« width ») s'étende de 0% jusqu'à leur valeur finale.»* 
+    - Déclencheur : Utiliser un IntersectionObserver sur la section « #a-propos » pour ne lancer la timeline d'animation qu'une seule fois lorsque la section apparaît.  
+    - Étape 1 - Titre principal : Text « UNE VISION » en fondu (opacity 0 à 1) + glissement depuis la gauche (translateX -50px à 0), et text « SINGULIÈRE » en fondu + glissement depuis la droite (translateX 50px à 0) immédiatement après.  
+    - Étape 2 - Paragraphes : Dès que « SINGULIÈRE » est apparu, faire apparaître les paragraphes avec un fondu et léger glissement depuis la gauche (translateX -30px à 0).  
+    - Étape 3 - Photo & Compteur : Photo de profil en fondu doux (opacity 0 à 1) et badge « 3+ Années d'expérience » avec le chiffre qui compte progressivement de 0+ à 3+.  
+    - Étape 4 - Barres de compétences : Animer les barres de manière séquentielle pour que leur largeur (« width ») s'étende de 0% jusqu'à leur valeur finale.»* 
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Copilot a créé une timeline « Anime.js » déclenchée par un « IntersectionObserver » unique dans « main.js ». Tous les éléments s'animent selon la séquence demandée (glissements du titre, apparition progressive des paragraphes et de la photo, compteur de 0 à 3 et remplissage des barres de progression).
 
