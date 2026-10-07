@@ -1,9 +1,11 @@
+// Importation des fonctions nécessaires pour charger les projets, créer les cartes de projet et initialiser la pop-up de projet.
 import { chargerProjets } from "./data.js";
 import { creerCarteProjet } from "./composants/carte_projet.js";
 import { initialiserPopUp } from "./composants/pop_up_projet.js";
 
 const grille = document.querySelector(".projects__grid");
 
+//  Animation d'apparisition du titre principal "PORTFOLIO" lettre par lettre, avec un délai entre chaque lettre pour créer un effet de révélation avec Anime.js.
 function animerTitreHero() {
 	const lettres = document.querySelectorAll(".hero__title-letter");
 	if (!lettres.length || typeof window.anime !== "function") return;
@@ -17,6 +19,7 @@ function animerTitreHero() {
 	});
 }
 
+// Animation progressive des éléments de la section "À propos" (titre, paragraphes de description, photo, badge d'expérience, barres de compétences) lorsqu'ils entrent dans la section, en utilisant Intersection Observer et Anime.js pour créer des transitions fluides.
 function initialiserAnimationAPropos() {
 	const section = document.querySelector("#a-propos");
 	if (!section || typeof window.anime !== "function") return;
@@ -36,6 +39,7 @@ function initialiserAnimationAPropos() {
 		finale: Number.parseInt(getComputedStyle(barre).getPropertyValue("--progress"), 10)
 	}));
 
+	// Position initiale masquée des éléments pour l'animation (opacité à 0 et translation hors de la vue) avant que l'animation ne commence.
 	anime.set(lignesTitre[0], { opacity: 0, translateX: -50 });
 	anime.set(lignesTitre[1], { opacity: 0, translateX: 50 });
 	anime.set(paragraphes, { opacity: 0, translateX: -30 });
@@ -49,6 +53,7 @@ function initialiserAnimationAPropos() {
 	const valeurCompteur = { valeur: 0 };
 	const timeline = anime.timeline({ autoplay: false });
 
+	// Constrcution de la séquence d'animation pour les différents éléments de la section "À propos", avec des délais et des durées spécifiques pour chaque élément.
 	timeline
 		.add({
 			targets: lignesTitre[0],
@@ -94,6 +99,8 @@ function initialiserAnimationAPropos() {
 				compteur.textContent = `${valeurCompteur.valeur}+`;
 			}
 		}, "-=500")
+
+	// Animation de remplissage des barres de compétences et mise à jour des pourcentages correspondants, avec un effet de progression fluide.
 	progressions.forEach((progression, index) => {
 		timeline.add({
 			targets: progression.valeur,
@@ -108,6 +115,7 @@ function initialiserAnimationAPropos() {
 		}, index === 0 ? "+=150" : "+=0");
 	});
 
+	// Déclenchement de la timeline seulement quand la section est visible à 25% dans la fenêtre d'affichage, pour éviter de jouer l'animation avant que l'utilisateur ne voie la section.
 	const observer = new IntersectionObserver(([entree]) => {
 		if (!entree.isIntersecting) return;
 		timeline.play();
@@ -117,6 +125,7 @@ function initialiserAnimationAPropos() {
 	observer.observe(section);
 }
 
+// Animation d'apparisiton des cartes de projets au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
 function initialiserAnimationProjets() {
 	const section = document.querySelector("#projets");
 	if (!section || typeof window.anime !== "function") return;
@@ -142,6 +151,7 @@ function initialiserAnimationProjets() {
 		titreObserver.observe(titre);
 	}
 
+	// Anime chaque carte séparément au fur et à mesure du défilement, avec un effet de translation et d'opacité, et un léger décalage pour créer un effet de cascade.
 	cartes.forEach((carte, index) => {
 		const media = carte.querySelector(".project-card__media");
 		const contenu = carte.querySelectorAll(".project-card__title, .project-card__description");
@@ -181,6 +191,7 @@ function initialiserAnimationProjets() {
 	});
 }
 
+// Animation d'apparistion des cartes de la section "Services" au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
 function initialiserAnimationServices() {
 	const section = document.querySelector("#services");
 	if (!section || typeof window.anime !== "function") return;
@@ -247,6 +258,7 @@ function initialiserAnimationServices() {
 	cartesObserver.observe(grille);
 }
 
+// Animation du titre et du lien email dans la section "Contact" au défilement de la page, avec un effet de translation et d'opacité pour chaque élément, en utilisant Intersection Observer et Anime.js.
 function initialiserAnimationContact() {
 	const section = document.querySelector("#contact");
 	if (!section || typeof window.anime !== "function") return;
@@ -300,6 +312,7 @@ function initialiserAnimationContact() {
 	observer.observe(section);
 }
 
+// Chargement initial des projets et injection dans la grille.
 try {
 	const projets = await chargerProjets();
 	grille.innerHTML = projets.map(creerCarteProjet).join("");
@@ -309,6 +322,7 @@ try {
 	console.error(erreur);
 }
 
+// Lancement des écouteurs d'animations et attente du chargement des polices pour le titre Hero.
 initialiserAnimationAPropos();
 initialiserAnimationProjets();
 initialiserAnimationServices();

@@ -1,17 +1,21 @@
+// Fonction pour échapper les caractères spéciaux dans le texte
 function echapper(texte = "") {
 	return String(texte).replace(/[&<>"']/g, (caractere) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[caractere]));
 }
 
+// Génère les étiquettts (tags) du projet, soit version courte pour la carte ou complète pour la modale (pour le pop-up du projet).
 function creerTags(projet, complet = false) {
 	const cles = complet ? ["role", "logiciel", "annee", "modalite", "mention", "format"] : ["role", "logiciel", "annee"];
 	return cles.map((cle) => `<span>${echapper(projet[cle])}</span>`).join("");
 }
 
+// Formate le texte de l'étape du processus pour qu'il commence par une majuscule et le reste en minuscules.
 function formaterEtape(texte) {
 	const minuscule = String(texte).toLowerCase();
 	return minuscule.charAt(0).toUpperCase() + minuscule.slice(1);
 }
 
+// Initialise le composant de la fenetre modale (pop-up) et ses interactions d'événements pour afficher les détails d'un projet lorsqu'on clique sur une carte de projet.
 export function initialiserPopUp(projets) {
 	const modal = document.querySelector("#project-modal");
 	const corps = modal.querySelector(".project-modal__body");
@@ -19,6 +23,7 @@ export function initialiserPopUp(projets) {
 	let indexMedia = 0;
 	let projetActif;
 
+	// Met à jour l'image affichée dans la modale en fonction de l'index actuel et met à jour les points de navigation (dots) pour refléter l'image active.
 	function afficherMedia() {
 		const medias = projetActif.galerieImages;
 		const conteneur = corps.querySelector(".modal-project__media");
@@ -29,6 +34,7 @@ export function initialiserPopUp(projets) {
 		corps.querySelectorAll(".modal-project__dot").forEach((dot, index) => dot.classList.toggle("is-active", index === indexMedia));
 	}
 
+	// Ferme la modale (pop-up), réinitialise le minuteur et met en pause la vidéo si présente.
 	function fermer() {
 		modal.classList.remove("is-open");
 		modal.setAttribute("aria-hidden", "true");
@@ -38,6 +44,7 @@ export function initialiserPopUp(projets) {
 		if (video) video.pause();
 	}
 
+	// Ouvre la modale (pop-up), injecte les détails du projet et démarre le carrousel d'images automatique si c'est une galarie d'images (et non une vidéo).
 	function ouvrir(projet) {
 		projetActif = projet;
 		indexMedia = 0;
@@ -54,9 +61,12 @@ export function initialiserPopUp(projets) {
 		document.body.classList.add("modal-is-open");
 		corps.querySelector(".project-modal__close")?.focus();
 		clearInterval(minuteur);
+
+		// Défilement automatique de la galerie toutes les 5 secondes.
 		if (!estVideo && projet.galerieImages.length > 1) minuteur = setInterval(() => { indexMedia = (indexMedia + 1) % projet.galerieImages.length; afficherMedia(); }, 5000);
 	}
 
+	// Gestion globale des clics (overture, fermeture, flèches de navigation, puces de navigation).
 	document.addEventListener("click", (evenement) => {
 		const bouton = evenement.target.closest(".project-card__button[data-project-id]");
 		if (bouton) ouvrir(projets.find((projet) => String(projet.id) === bouton.dataset.projectId));
@@ -67,6 +77,7 @@ export function initialiserPopUp(projets) {
 		if (point) { indexMedia = Number(point.dataset.mediaIndex); afficherMedia(); }
 	});
 
+	// Permet d'ouvrir la modale (Pop-up) au clic avec les touches Entrée / Espaces sur la miniature du projet (image) pour l'accessibilité.
 	document.querySelectorAll(".project-card__media[data-project-id]").forEach((media) => {
 		const ouvrirProjet = () => ouvrir(projets.find((projet) => String(projet.id) === media.dataset.projectId));
 		media.addEventListener("click", ouvrirProjet);
@@ -78,6 +89,7 @@ export function initialiserPopUp(projets) {
 		});
 	});
 
+	// Navigation au clavier (Échap pour ferner, flèches gauche/droite pour naviguer dans la galerie d'images).
 	document.addEventListener("keydown", (evenement) => {
 		if (!modal.classList.contains("is-open")) return;
 		if (evenement.key === "Escape") fermer();
