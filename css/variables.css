@@ -6,7 +6,7 @@
   --couleur-tan: #C6AC8F;
   --couleur-brun-pierre: #5E503F;
 
-  /* Variables sémantiques */
+  /* Variables sémantiques pour réutiliser facilement les couleurs partout dans le projet */
   --noir-fonce: var(--couleur-noir);
   --noir-de-jais: var(--couleur-noir-de-jais);
   --lin-doux: var(--couleur-lin-doux);

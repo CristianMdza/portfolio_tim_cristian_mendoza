@@ -1,3 +1,6 @@
+/*STYLES POUR LA SECTION LOGICIELS*/
+
+/* Conteneur principal de la section logiciels */
 .software {
 	position: relative;
 	display: flex;
@@ -12,6 +15,7 @@
 	overflow: hidden;
 }
 
+/* Dégradés sur les bords (gauche et droit) pour un effet de fondu progressif */
 .software::before,
 .software::after {
 	position: absolute;
@@ -23,16 +27,19 @@
 	pointer-events: none;
 }
 
+/* Dégradé sur le bord gauche */
 .software::before {
 	left: 0;
 	background: linear-gradient(to right, #0A0908, rgba(34, 51, 59, 0));
 }
 
+/* Dégradé sur le bord droit */
 .software::after {
 	right: 0;
 	background: linear-gradient(to left, #0A0908, rgba(34, 51, 59, 0));
 }
 
+/* Styles pour le titre "Logiciels maîtrisés" */
 .software__title {
 	position: relative;
 	z-index: 1;
@@ -47,17 +54,20 @@
 	text-transform: uppercase;
 }
 
+/* Conteneur pour le carrousel de logiciels */
 .software__carousel {
 	position: relative;
 	z-index: 1;
 	width: 100%;
 }
 
+/* Conteneur pour la zone de défilement des logiciels */
 .software__viewport {
 	width: 100%;
 	overflow: hidden;
 }
 
+/* Conteneur pour les éléments logiciels avec animation de défilement en boucle */
 .software__track {
 	display: flex;
 	align-items: center;
@@ -71,6 +81,7 @@
 	animation: scroll 22s linear infinite;
 }
 
+/* Styles pour chaque élément logiciel individuel */
 .software__item {
 	display: flex;
 	align-items: center;
@@ -90,6 +101,7 @@
 	flex-shrink: 0;
 }
 
+/* Styles pour le texte (nom du logiciel) dans chaque élément logiciel */
 .software__item span {
 	display: block;
 	max-width: 160px;
@@ -98,6 +110,7 @@
 	white-space: nowrap;
 }
 
+/* Styles (couleurs et tailles) pour les icônes (SVG) des logiciels (Iconify) */
 .software__item iconify-icon {
 	display: flex;
 	align-items: center;
@@ -130,11 +143,13 @@
 	stroke: #EAE0D5 !important;
 }
 
+/* Ajustement spécifique pour l'icône Reaper afin de la rendre plus grande et plus visible */
 .software__item .software__icon--reaper {
 	font-size: 48px;
 	transform: scale(1.25);
 }
 
+/* Animation de défilement horizontal infini pour le conteneur des logiciels */
 @keyframes scroll {
 	0% {
 		transform: translate3d(0, 0, 0);
@@ -144,6 +159,7 @@
 	}
 }
 
+/* Ça permet d'arreter l'animation de défilement si l'utilisateur a activé la préférence "Réduire les animations" dans son système d'exploitation */
 @media (prefers-reduced-motion: reduce) {
 	.software__track {
 		animation-play-state: paused;

@@ -1,3 +1,6 @@
+/* STYLES POUR LE PIED DE PAGE */
+
+/* Styles pour le conteneur principal du pied de page */
 .site-footer {
 	display: flex;
 	align-items: center;
@@ -15,6 +18,7 @@
 	text-align: center;
 }
 
+/* Styles pour le contenu du pied de page */
 .site-footer__content {
 	display: flex;
 	align-items: center;
@@ -40,6 +44,7 @@
 	gap: 17px;
 }
 
+/* Styles pour la marque du site (logo) dans le pied de page */
 .site-footer__brand {
 	color: #EAE0D5;
 	opacity: 0.7;
@@ -71,6 +76,7 @@
 	margin: 0;
 }
 
+/* Liens des réseaux sociaux avec icônes Iconify */
 .site-footer__socials {
 	display: flex;
 	align-items: center;
@@ -88,6 +94,7 @@
 	transition: transform 0.2s ease, opacity 0.3s ease, color 0.2s ease;
 }
 
+/* Filtre pour teinter les icônes (SVG) des réseaux sociaux aux couleur du thème */
 .site-footer__socials iconify-icon {
 	color: #EAE0D5;
 	font-size: 32px;
@@ -98,6 +105,7 @@
 	transition: opacity 0.3s ease, color 0.2s ease;
 }
 
+/* Effets de survol et de mise au point pour les éléments interactifs du pied de page */
 .site-footer__brand:hover,
 .site-footer__brand:focus-visible,
 .site-footer__contact:hover,
@@ -135,6 +143,7 @@
 	filter: none;
 }
 
+/* Ligne séparatrice dans le pied de page */
 .site-footer__separator {
 	width: min(457px, 100%);
 	height: 2px;
@@ -143,6 +152,7 @@
 	background: rgba(94, 80, 63, 0.7);
 }
 
+/* Styles pour le texte de copyright (Droits d'auteur) dans le pied de page */
 .site-footer__copyright {
 	margin: 0;
 	color: var(--brun-pierre);
@@ -151,6 +161,7 @@
 	line-height: 1.4;
 }
 
+/* MEDIA QUERIES (RESPONSIVE) POUR LE PIED DE PAGE */
 @media (max-width: 520px) {
 	.site-footer {
 		min-height: 300px;

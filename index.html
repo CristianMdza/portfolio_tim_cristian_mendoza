@@ -6,15 +6,19 @@
 		<meta name="description" content="Portfolio de Christian Mendoza" />
 		<title>Christian Mendoza | Portfolio</title>
 
+		<!-- Polices Google Fonts (Playfair Display et Poppins) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,700&family=Poppins:wght@300;400;500&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- Librairies externes pour les icônes et les animations JavaScript -->
 		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 
+		<!-- Importation des fichiers CSS (variables, base, layout et composants) -->
 		<link rel="stylesheet" href="css/variables.css" />
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/layout.css" />
@@ -27,12 +31,14 @@
 		<link rel="stylesheet" href="css/composants/pied_de_page.css" />
 	</head>
 	<body>
+		<!-- En-tête du site : Nom logo avec navigation principale -->
 		<header class="site-header" id="entete">
 			<div class="site-header__inner">
 				<a class="site-header__brand" href="./index.html" aria-label="Recharger le portfolio de Christian Mendoza">
 					Christian Mendoza
 				</a>
 
+				<!-- Navigation principale du site avec liens vers les sections Accueil, À propos, Mes projets, Services et Contact -->
 				<nav class="site-nav" aria-label="Navigation principale">
 					<a class="site-nav__link is-active" href="#entete" aria-current="page">
 						<iconify-icon icon="solar:home-2-linear" aria-hidden="true"></iconify-icon>
@@ -59,6 +65,7 @@
 		</header>
 
 		<main>
+			<!-- Section Hero (Accueil) : Slogan, titre principal "Portfolio", description, bouton "Mes projets" et bouton de défilement -->
 			<section class="hero" id="accueil" aria-labelledby="hero-title">
 				<div class="hero__content">
 					<p class="hero__eyebrow">Le design dans les détails</p>
@@ -78,6 +85,7 @@
 				</a>
 			</section>
 
+			<!-- Section À propos : Aperçu professionnel, compétences, bouton pour télécharger mon CV et photo de profil -->
 			<section class="about" id="a-propos" aria-labelledby="about-title">
 				<div class="about__content">
 					<p class="about__eyebrow">À propos</p>
@@ -94,6 +102,7 @@
 						</p>
 					</div>
 
+					<!-- Compétences : Barres de progression avec pourcentage pour chaque compétence -->
 					<div class="skills" aria-label="Compétences">
 						<div class="skill">
 							<div class="skill__heading"><span>Désign graphique/web</span><span>95%</span></div>
@@ -117,9 +126,11 @@
 						</div>
 					</div>
 
+					<!-- Bouton pour télécharger mon CV -->
 					<a class="bouton" href="assets/docs/Cv_christian_mendoza.pdf" download="Cv_christian_mendoza.pdf"><span>Télécharger mon CV</span></a>
 				</div>
 
+				<!-- Espace réservé pour la photo de profil avec cercle décoratif et indicateur d'expérience -->
 				<div class="about__visual" aria-label="Espace réservé pour la photo de profil">
 					<div class="about__circle" aria-hidden="true"></div>
 					<img class="about__photo-placeholder" src="assets/images/photo_profil/provisoire/headshot_1855x2600.jpg" alt="Photo de profil provisoire de Christian Mendoza" />
@@ -130,6 +141,7 @@
 				</div>
 			</section>
 
+			<!-- Section Mes projets : La grille est injectée dynamiquement en JavaScript (projets.json) -->
 			<section class="projects" id="projets" aria-labelledby="projects-title">
 				<div class="projects__intro">
 					<p class="projects__eyebrow">Portfolio sélectionné</p>
@@ -138,6 +150,7 @@
 				<div class="projects__grid" aria-live="polite"></div>
 			</section>
 
+			<!-- Section Services : Carte de service avec icône, titre et description pour chaque service -->
 			<section class="services" id="services" aria-labelledby="services-title">
 				<div class="services__container">
 					<div class="services__intro">
@@ -154,26 +167,36 @@
 							<h3>Univers interactifs</h3>
 							<p>Conception d'installations visuelles et d'expériences interactives en temps réel.</p>
 						</article>
+
+						<!-- Carte de service : Design graphique -->
 						<article class="service-card">
 							<div class="service-card__icon"><iconify-icon icon="solar:palette-linear" aria-hidden="true"></iconify-icon></div>
 							<h3>Design graphique</h3>
 							<p>Création d'illustrations numériques et de visuels graphiques sur mesure.</p>
 						</article>
+
+						<!-- Carte de service : Montage vidéo -->
 						<article class="service-card">
 							<div class="service-card__icon"><iconify-icon icon="solar:videocamera-record-linear" aria-hidden="true"></iconify-icon></div>
 							<h3>Montage vidéo</h3>
 							<p>Édition vidéo, assemblage créatif et effets visuels pour vos projets.</p>
 						</article>
+
+						<!-- Carte de service : Modélisation 3D -->
 						<article class="service-card">
 							<div class="service-card__icon"><iconify-icon icon="solar:box-minimalistic-linear" aria-hidden="true"></iconify-icon></div>
 							<h3>Modélisation 3D</h3>
 							<p>Création d'objets, de personnages et d'environnements 3D stylisés.</p>
 						</article>
+
+						<!-- Carte de service : Motion design -->
 						<article class="service-card">
 							<div class="service-card__icon"><iconify-icon icon="solar:running-linear" aria-hidden="true"></iconify-icon></div>
 							<h3>Motion design</h3>
 							<p>Animation 2D et 3D synchronisée avec du rythme sonore.</p>
 						</article>
+
+						<!-- Carte de service : Design UI/UX -->
 						<article class="service-card">
 							<div class="service-card__icon"><iconify-icon icon="solar:monitor-smartphone-linear" aria-hidden="true"></iconify-icon></div>
 							<h3>Design UI/UX</h3>
@@ -183,6 +206,7 @@
 				</div>
 			</section>
 
+			<!-- Section Contact : Titre, phrase d'accroche, adresse e-mail et bouton pour envoyer un e-mail -->
 			<section class="contact" id="contact" aria-labelledby="contact-title">
 				<div class="contact__container">
 					<p class="contact__eyebrow">Contact</p>
@@ -196,6 +220,7 @@
 				</div>
 			</section>
 
+			<!-- Section Logiciels : Carousel de logiciels maîtrisés avec icônes et noms -->
 			<section class="software" aria-labelledby="software-title">
 				<h2 class="software__title" id="software-title">Logiciels maîtrisés</h2>
 				<div class="software__carousel" data-software-carousel>
@@ -210,6 +235,8 @@
 							<div class="software__item"><iconify-icon icon="bi:unity" aria-hidden="true"></iconify-icon><span>Unity</span></div>
 							<div class="software__item"><iconify-icon icon="thesvg-color:davinci-resolve" aria-hidden="true"></iconify-icon><span>DaVinci Resolve</span></div>
 							<div class="software__item"><iconify-icon class="software__icon--reaper" icon="fad:logo-reaper" aria-hidden="true"></iconify-icon><span>Reaper</span></div>
+
+							<!-- Répétition des logiciels (masqués)pour créer un effet de défilement infini -->
 							<div class="software__item" aria-hidden="true"><iconify-icon icon="cib:godot-engine"></iconify-icon><span>Godot</span></div>
 							<div class="software__item" aria-hidden="true"><iconify-icon icon="streamline-logos:adobe-after-effects-logo-block"></iconify-icon><span>After Effects</span></div>
 							<div class="software__item" aria-hidden="true"><iconify-icon icon="devicon-plain:maya"></iconify-icon><span>Maya</span></div>
@@ -225,6 +252,7 @@
 			</section>
 		</main>
 
+		<!-- Section Pied de page : Informations de contact (numéro de téléphone & localisation) et liens vers les réseaux sociaux (GitHub & LinkedIn) -->
 		<footer class="site-footer">
 			<div class="site-footer__content">
 				<div class="site-footer__details">
@@ -234,19 +262,28 @@
 					<a class="site-footer__contact" href="tel:+14382273449">+1 (438) 227 - 3449</a>
 					<p class="site-footer__location">Laval • Grand Montréal</p>
 				</div>
+
+				<!-- Lien vers les réseaux sociaux -->
 				<div class="site-footer__socials" aria-label="Réseaux sociaux">
+
+					<!-- Lien vers le profil GitHub avec icône GitHub -->
 					<a href="https://github.com/CristianMdza" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Christian Mendoza">
 						<iconify-icon icon="mdi:github" aria-hidden="true"></iconify-icon>
 					</a>
+
+					<!-- Lien vers le profil LinkedIn avec icône LinkedIn -->
 					<a href="http://www.linkedin.com/in/cristian-mendoza-b38631216" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Christian Mendoza">
 						<iconify-icon icon="mdi:linkedin" aria-hidden="true"></iconify-icon>
 					</a>
 				</div>
+
+				<!-- Droit d'auteur -->
 				<div class="site-footer__separator" aria-hidden="true"></div>
 				<p class="site-footer__copyright">© 2026 Portfolio Christian Mendoza. Tous droits réservés.</p>
 			</div>
 		</footer>
 
+		<!-- Pop-up projet : Fenêtre modale (Remplie dynamiquement par le JS au clic sur un projet)pour afficher les détails d'un projet sélectionné -->
 		<div class="project-modal" id="project-modal" aria-hidden="true">
 			<div class="project-modal__backdrop" data-modal-close></div>
 			<article class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -255,6 +292,7 @@
 			</article>
 		</div>
 
+		<!-- Importation du fichier JavaScript principal (main.js) -->
 		<script type="module" src="js/main.js"></script>
 	</body>
 </html>

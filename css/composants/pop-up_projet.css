@@ -1,3 +1,5 @@
+/* STYLES POUR LA MODALE (POP-UP) DE PROJET QUI EST MASQUÉE PAR DÉFAUT */
+
 .project-modal { 
     position: fixed; 
     inset: 0; 
@@ -10,17 +12,20 @@
     transition: opacity 180ms ease, visibility 180ms ease; 
 } 
 
+/* Classe toggle par le JS quand l'utilisateur clique sur le bouton "Voir le projet" pour afficher la modale */
 .project-modal.is-open { 
     visibility: visible; 
     opacity: 1; 
 } 
 
+/* Styles pour le fond sombre semi-transparent derrière la fenêtre de modale */
 .project-modal__backdrop { 
     position: absolute; 
     inset: 0; 
     background: rgba(10, 9, 8, 0.78); 
 } 
 
+/* Boîte de dialogue de la modale (la fenêtre elle-même) */
 .project-modal__dialog { 
     position: relative; 
     z-index: 1; 
@@ -33,12 +38,14 @@
     overflow: hidden; 
 } 
 
+/* Zone de contenu défilable si les textes dépassent la hauteur de la modale */
 .project-modal__body { 
     max-height: 90vh; 
     padding: 48px; 
     overflow-y: auto; 
 } 
 
+/* Bouton de fermeture de la modale (croix ou X) */
 .project-modal__close { 
     position: absolute; 
     top: 12px; 
@@ -84,6 +91,7 @@
     transform: scale(0.95); 
 } 
 
+/* Conteneur pour le média de la modale (image ou vidéo) */
 .modal-project__media { 
     position: relative; 
     display: flex; 
@@ -98,6 +106,7 @@
     overflow: hidden; 
 } 
 
+/* Styles pour les images et vidéos à l'intérieur de la modale */
 .modal-project__media img, 
 .modal-project__media video { 
     width: 100%; 
@@ -105,6 +114,7 @@
     object-fit: cover; 
 } 
 
+/* Styles pour les contrôles (flèches, precedent/suivant) de navigation dans la modale */
 .modal-project__control { 
     position: absolute; 
     top: 50%; 
@@ -125,6 +135,7 @@
     transition: all 0.25s ease; 
 } 
 
+/* Styles pour les icônes à l'intérieur des contrôles (fleches) de navigation */
 .modal-project__control iconify-icon { 
     display: block; 
     width: 1em; 
@@ -133,9 +144,11 @@
     line-height: 1; 
 } 
 
+/* Positionnement des contrôles de navigation (précédent et suivant) */
 .modal-project__control--previous { left: 12px; } 
 .modal-project__control--next { right: 12px; } 
 
+/* Styles pour les contrôles de navigation au survol et à la mise au point */
 .modal-project__control:hover, 
 .modal-project__control:focus-visible { 
     background: #C6AC8F; 
@@ -152,6 +165,7 @@
     box-shadow: 0 0 14px rgba(94, 80, 63, 0.42), inset 0 2px 5px rgba(10, 9, 8, 0.2); 
 } 
 
+/* Styles pour les points de navigation (indicateurs) de la modale */
 .modal-project__dots { 
     position: absolute; 
     bottom: 10px; 
@@ -173,6 +187,7 @@
 
 .modal-project__dot.is-active { background: var(--tan); } 
 
+/* Styles pour le titre de la modale (nom du projet) */
 .modal-project__heading { 
     margin: 0 0 14px; 
     font-family: "Playfair Display", Georgia, serif; 
@@ -185,6 +200,7 @@
     font-weight: 500; 
 } 
 
+/* Styles pour la ligne séparatrice sous le titre de la modale */
 .modal-project__separator { 
     height: 2px; 
     margin-bottom: 18px; 
@@ -192,6 +208,7 @@
     background: rgba(198, 172, 143, 0.6); 
 } 
 
+/* Styles pour les sections de la modale (Synopsis, descriptions, processus et étiquettes) */
 .modal-project__section h4 { 
     margin: 18px 0 7px; 
     font-family: "Poppins", sans-serif; 
@@ -210,6 +227,7 @@
     line-height: 1.55; 
 } 
 
+/* Styles pour les étiquettes (tags) de la modale */
 .modal-project__tags { 
     display: flex; 
     flex-wrap: nowrap; 
@@ -250,6 +268,7 @@
     margin-left: auto; 
 } 
 
+/* MEDIA QUERIES (RESPONSIVE) PETITS ÉCRANS POUR LA MODALE */
 @media (max-width: 600px) { 
     .project-modal { padding: 18px 12px; } 
     .project-modal__body { padding: 32px; } 
