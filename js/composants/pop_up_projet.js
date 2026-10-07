@@ -22,6 +22,7 @@ export function initialiserPopUp(projets) {
 	let minuteur;
 	let indexMedia = 0;
 	let projetActif;
+	let elementDeclencheur;
 
 	// Met à jour l'image affichée dans la modale en fonction de l'index actuel et met à jour les points de navigation (dots) pour refléter l'image active.
 	function afficherMedia() {
@@ -36,8 +37,10 @@ export function initialiserPopUp(projets) {
 
 	// Ferme la modale (pop-up), réinitialise le minuteur et met en pause la vidéo si présente.
 	function fermer() {
+		elementDeclencheur?.focus();
 		modal.classList.remove("is-open");
 		modal.setAttribute("aria-hidden", "true");
+		modal.querySelector(".project-modal__dialog").removeAttribute("aria-labelledby");
 		document.body.classList.remove("modal-is-open");
 		clearInterval(minuteur);
 		const video = corps.querySelector("video");
@@ -46,6 +49,7 @@ export function initialiserPopUp(projets) {
 
 	// Ouvre la modale (pop-up), injecte les détails du projet et démarre le carrousel d'images automatique si c'est une galarie d'images (et non une vidéo).
 	function ouvrir(projet) {
+		elementDeclencheur = document.activeElement;
 		projetActif = projet;
 		indexMedia = 0;
 		const estVideo = Boolean(projet.video);
@@ -58,8 +62,10 @@ export function initialiserPopUp(projets) {
 		corps.innerHTML = `<div class="modal-project__media">${media}${controles}</div><h3 class="modal-project__heading" id="modal-title">${echapper(projet.titre)} <span>– ${echapper(projet.categorie)}</span></h3><div class="modal-project__separator"></div>${projet.synopsis ? `<section class="modal-project__section"><h4>Synopsis</h4><p>${echapper(projet.synopsis)}</p></section>` : ""}<section class="modal-project__section"><h4>Description du projet</h4><p>${echapper(projet.descriptionDemande)}</p></section><section class="modal-project__section"><h4>Description de ma démarche</h4><p>${echapper(projet.descriptionProjet)}</p></section>${processus}<div class="modal-project__tags">${creerTags(projet, true)}</div>`;
 		modal.classList.add("is-open");
 		modal.setAttribute("aria-hidden", "false");
+		modal.querySelector(".project-modal__dialog").setAttribute("aria-labelledby", "modal-title");
 		document.body.classList.add("modal-is-open");
-		corps.querySelector(".project-modal__close")?.focus();
+		corps.setAttribute("tabindex", "-1");
+		corps.focus();
 		clearInterval(minuteur);
 
 		// Défilement automatique de la galerie toutes les 5 secondes.
@@ -95,5 +101,13 @@ export function initialiserPopUp(projets) {
 		if (evenement.key === "Escape") fermer();
 		if (evenement.key === "ArrowRight" && projetActif?.galerieImages.length) { indexMedia = (indexMedia + 1) % projetActif.galerieImages.length; afficherMedia(); }
 		if (evenement.key === "ArrowLeft" && projetActif?.galerieImages.length) { indexMedia = (indexMedia - 1 + projetActif.galerieImages.length) % projetActif.galerieImages.length; afficherMedia(); }
+		if (evenement.key === "PageDown") {
+			evenement.preventDefault();
+			corps.scrollBy({ top: Math.max(corps.clientHeight * 0.8, 240), behavior: "smooth" });
+		}
+		if (evenement.key === "PageUp") {
+			evenement.preventDefault();
+			corps.scrollBy({ top: -Math.max(corps.clientHeight * 0.8, 240), behavior: "smooth" });
+		}
 	});
 }

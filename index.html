@@ -38,8 +38,12 @@
 					Christian Mendoza
 				</a>
 
+				<button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale" aria-label="Ouvrir le menu">
+					<iconify-icon icon="solar:hamburger-menu-linear" aria-hidden="true"></iconify-icon>
+				</button>
+
 				<!-- Navigation principale du site avec liens vers les sections Accueil, À propos, Mes projets, Services et Contact -->
-				<nav class="site-nav" aria-label="Navigation principale">
+				<nav class="site-nav" id="navigation-principale" aria-label="Navigation principale">
 					<a class="site-nav__link is-active" href="#entete" aria-current="page">
 						<iconify-icon icon="solar:home-2-linear" aria-hidden="true"></iconify-icon>
 						<span>Accueil</span>
@@ -144,8 +148,8 @@
 			<!-- Section Mes projets : La grille est injectée dynamiquement en JavaScript (projets.json) -->
 			<section class="projects" id="projets" aria-labelledby="projects-title">
 				<div class="projects__intro">
-					<p class="projects__eyebrow">Portfolio sélectionné</p>
-					<h2 class="projects__title" id="projects-title"><span>Mes</span> <em>projets</em></h2>
+					<p class="projects__eyebrow">Mes projets</p>
+					<h2 class="projects__title" id="projects-title"><span>Portfolio</span> <em>sélectionné</em></h2>
 				</div>
 				<div class="projects__grid" aria-live="polite"></div>
 			</section>
@@ -283,10 +287,15 @@
 			</div>
 		</footer>
 
+		<a class="back-to-top" href="#entete" aria-label="Aller en haut de la page">
+			<span>Aller en haut</span>
+			<span class="back-to-top__line" aria-hidden="true"></span>
+		</a>
+
 		<!-- Pop-up projet : Fenêtre modale (Remplie dynamiquement par le JS au clic sur un projet)pour afficher les détails d'un projet sélectionné -->
 		<div class="project-modal" id="project-modal" aria-hidden="true">
 			<div class="project-modal__backdrop" data-modal-close></div>
-			<article class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+			<article class="project-modal__dialog" role="dialog" aria-modal="true" aria-label="Détails du projet">
 				<button class="project-modal__close" type="button" aria-label="Fermer le projet" data-modal-close><iconify-icon icon="solar:close-linear" aria-hidden="true"></iconify-icon></button>
 				<div class="project-modal__body"></div>
 			</article>

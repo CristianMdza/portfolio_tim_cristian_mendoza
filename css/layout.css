@@ -58,6 +58,24 @@
 	border-radius: 999px;
 }
 
+.site-nav-toggle {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: 2px solid var(--brun-pierre);
+	border-radius: 50%;
+	background: transparent;
+	color: var(--lin-doux);
+	cursor: pointer;
+}
+
+.site-nav-toggle iconify-icon {
+	font-size: 24px;
+}
+
 /* Styles pour les liens de navigation dans la capsule/pilule */
 .site-nav__link {
 	display: inline-flex;
@@ -201,7 +219,7 @@
 	align-items: center;
 	flex-direction: column;
 	gap: 8px;
-	color: rgba(234, 224, 213, 0.42);
+	color: rgba(234, 224, 213, 0.72);
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 1.2px;
@@ -215,6 +233,37 @@
 	width: 1px;
 	height: 32px;
 	background: linear-gradient(to bottom, rgba(198, 172, 143, 0.55), transparent);
+}
+
+.back-to-top {
+	position: fixed;
+	right: clamp(16px, 3vw, 42px);
+	bottom: 24px;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 8px;
+	color: rgba(234, 224, 213, 0.72);
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: color 220ms ease, transform 220ms ease;
+}
+
+.back-to-top__line {
+	display: block;
+	width: 1px;
+	height: 32px;
+	background: linear-gradient(to bottom, rgba(198, 172, 143, 0.8), transparent);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+	color: var(--lin-doux);
+	outline: none;
+	transform: scale(1.04);
 }
 
 /* STYLES POUR LA SECTION À PROPOS */
@@ -364,7 +413,7 @@
 
 .about__experience span {
 	margin-top: 5px;
-	font-size: 0.54rem;
+	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.35;
 	text-transform: uppercase;
@@ -477,24 +526,49 @@
 /* Adaptation pour les petits écrans mobiles de largeur maximale 620px */
 @media (max-width: 620px) {
 	.site-header {
-		min-height: 260px;
-		padding: 32px 16px;
+		min-height: 150px;
+		padding: 28px 18px;
+	}
+
+	.site-header__inner {
+		position: relative;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.site-nav-toggle {
+		display: inline-flex;
 	}
 
 	.site-nav {
-		width: min(100%, 360px);
-		flex-wrap: wrap;
-		justify-content: center;
+		position: absolute;
+		top: calc(100% + 28px);
+		right: 0;
+		z-index: 5;
+		display: none;
+		width: min(280px, calc(100vw - 36px));
+		padding: 72px 28px;
 		border-radius: 24px;
+		background: radial-gradient(circle at center, var(--noir-de-jais), var(--noir-fonce) 72%);
+		box-shadow: 0 18px 50px rgba(10, 9, 8, 0.4);
+	}
+
+	.site-nav.is-open {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 18px;
 	}
 
 	.site-nav__link {
-		padding: 0 11px;
-		font-size: 0.84rem;
+		width: fit-content;
+		padding: 0 14px;
+		font-size: 0.95rem;
 	}
 
 	.hero {
-		min-height: calc(100vh - 260px);
+		min-height: calc(100vh - 150px);
 		padding-right: 12px;
 		padding-left: 12px;
 	}
@@ -537,7 +611,8 @@
 	}
 
 	.about__visual {
-		height: 420px;
+		width: min(100%, 380px);
+		height: min(420px, 105vw);
 		margin: 0 auto;
 	}
 
@@ -562,5 +637,87 @@
 
 	.bouton--contact {
 		font-size: 0.85rem;
+	}
+
+	.back-to-top {
+		right: 10px;
+		bottom: 18px;
+		font-size: 0.65rem;
+	}
+}
+
+@media (max-width: 375px) {
+	.site-header__brand {
+		max-width: calc(100% - 60px);
+		font-size: 0.9rem;
+	}
+
+	.hero__eyebrow {
+		max-width: 260px;
+		text-align: center;
+	}
+
+	.hero__title {
+		font-size: clamp(3.2rem, 17vw, 4.8rem);
+	}
+
+	.hero__description {
+		max-width: 310px;
+	}
+
+	.about {
+		padding-right: 18px;
+		padding-left: 18px;
+	}
+
+	.about__title {
+		font-size: clamp(2.8rem, 13vw, 3.75rem);
+	}
+
+	.about__copy,
+	.skill__heading {
+		font-size: 0.875rem;
+	}
+
+	.about__visual {
+		height: 340px;
+	}
+
+	.about__experience {
+		left: -4px;
+		width: 108px;
+		height: 86px;
+	}
+
+	.projects {
+		padding-right: 18px;
+		padding-left: 18px;
+	}
+
+	.project-card__title {
+		font-size: 1.15rem;
+		white-space: normal;
+	}
+
+	.project-card__footer {
+		gap: 6px;
+	}
+
+	.project-card__tags span,
+	.project-card__button {
+		font-size: 0.7rem;
+	}
+
+	.contact {
+		padding-right: 18px;
+		padding-left: 18px;
+	}
+
+	.contact__title {
+		font-size: clamp(3rem, 15vw, 4.5rem);
+	}
+
+	.contact__email {
+		font-size: clamp(1.75rem, 8vw, 2.4rem);
 	}
 }

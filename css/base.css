@@ -6,6 +6,7 @@
 /* Défilement fluide pour les liens d'ancrage du menu*/
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 /* Styles de base pour le corps de la page */
@@ -16,6 +17,7 @@ body {
 	color: var(--lin-doux);
 	font-family: "Poppins", sans-serif;
 	font-weight: 400;
+	overflow-x: hidden;
 }
 
 /* Réinitialisation des styles pour les liens et boutons */

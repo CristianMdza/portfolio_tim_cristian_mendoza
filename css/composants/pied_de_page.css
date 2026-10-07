@@ -155,7 +155,7 @@
 /* Styles pour le texte de copyright (Droits d'auteur) dans le pied de page */
 .site-footer__copyright {
 	margin: 0;
-	color: var(--brun-pierre);
+	color: rgba(234, 224, 213, 0.72);
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.4;

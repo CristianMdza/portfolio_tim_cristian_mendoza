@@ -53,7 +53,7 @@ function initialiserAnimationAPropos() {
 	const valeurCompteur = { valeur: 0 };
 	const timeline = anime.timeline({ autoplay: false });
 
-	// Constrcution de la séquence d'animation pour les différents éléments de la section "À propos", avec des délais et des durées spécifiques pour chaque élément.
+	// Les descriptions apparaissent avec le mot accentué, puis les éléments visuels se révèlent ensemble.
 	timeline
 		.add({
 			targets: lignesTitre[0],
@@ -63,32 +63,19 @@ function initialiserAnimationAPropos() {
 			easing: "easeOutCubic"
 		})
 		.add({
-			targets: lignesTitre[1],
+			targets: [...lignesTitre].slice(1).concat([...paragraphes]),
 			opacity: [0, 1],
-			translateX: [50, 0],
-			duration: 700,
+			translateX: (element, index) => index === 0 ? [50, 0] : [-30, 0],
+			delay: anime.stagger(80),
+			duration: 650,
 			easing: "easeOutCubic"
 		}, "-=120")
 		.add({
-			targets: paragraphes,
-			opacity: [0, 1],
-			translateX: [-30, 0],
-			delay: anime.stagger(120),
-			duration: 600,
-			easing: "easeOutCubic"
-		}, "+=100")
-		.add({
-			targets: photo,
+			targets: [photo, badge],
 			opacity: [0, 1],
 			duration: 1000,
 			easing: "easeOutQuad"
-		}, "-=300")
-		.add({
-			targets: badge,
-			opacity: [0, 1],
-			duration: 700,
-			easing: "easeOutQuad"
-		}, "-=700")
+		}, "+=120")
 		.add({
 			targets: valeurCompteur,
 			valeur: 3,
@@ -98,22 +85,20 @@ function initialiserAnimationAPropos() {
 			update: () => {
 				compteur.textContent = `${valeurCompteur.valeur}+`;
 			}
-		}, "-=500")
+		}, "-=900");
 
-	// Animation de remplissage des barres de compétences et mise à jour des pourcentages correspondants, avec un effet de progression fluide.
-	progressions.forEach((progression, index) => {
-		timeline.add({
-			targets: progression.valeur,
-			nombre: progression.finale,
-			round: 1,
-			duration: 700,
-			easing: "easeOutCubic",
-			update: () => {
-				progression.barre.style.width = `${progression.valeur.nombre}%`;
-				progression.label.textContent = `${progression.valeur.nombre}%`;
-			}
-		}, index === 0 ? "+=150" : "+=0");
-	});
+	// Les cinq barres progressent en parallèle avec la photo et le badge.
+	timeline.add({
+		targets: progressions.map((progression) => progression.valeur),
+		nombre: (target, index) => progressions[index].finale,
+		round: 1,
+		duration: 900,
+		easing: "easeOutCubic",
+		update: () => progressions.forEach((progression) => {
+			progression.barre.style.width = `${progression.valeur.nombre}%`;
+			progression.label.textContent = `${progression.valeur.nombre}%`;
+		})
+	}, "-=1000");
 
 	// Déclenchement de la timeline seulement quand la section est visible à 25% dans la fenêtre d'affichage, pour éviter de jouer l'animation avant que l'utilisateur ne voie la section.
 	const observer = new IntersectionObserver(([entree]) => {
@@ -123,6 +108,32 @@ function initialiserAnimationAPropos() {
 	}, { threshold: 0.25 });
 
 	observer.observe(section);
+}
+
+function initialiserNavigationMobile() {
+	const bouton = document.querySelector(".site-nav-toggle");
+	const navigation = document.querySelector(".site-nav");
+	if (!bouton || !navigation) return;
+
+	const fermerMenu = () => {
+		navigation.classList.remove("is-open");
+		bouton.setAttribute("aria-expanded", "false");
+		bouton.setAttribute("aria-label", "Ouvrir le menu");
+	};
+
+	bouton.addEventListener("click", () => {
+		const ouvert = navigation.classList.toggle("is-open");
+		bouton.setAttribute("aria-expanded", String(ouvert));
+		bouton.setAttribute("aria-label", ouvert ? "Fermer le menu" : "Ouvrir le menu");
+	});
+
+	navigation.addEventListener("click", (evenement) => {
+		if (evenement.target.closest(".site-nav__link")) fermerMenu();
+	});
+
+	document.addEventListener("keydown", (evenement) => {
+		if (evenement.key === "Escape") fermerMenu();
+	});
 }
 
 // Animation d'apparisiton des cartes de projets au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
@@ -327,4 +338,5 @@ initialiserAnimationAPropos();
 initialiserAnimationProjets();
 initialiserAnimationServices();
 initialiserAnimationContact();
+initialiserNavigationMobile();
 document.fonts.ready.then(animerTitreHero);
