@@ -1,3 +1,6 @@
+/* STYLES POUR LA SECTION PROJETS */
+
+/* Conteneur principal de la section projets */
 .projects {
 	min-height: 100vh;
 	padding: 116px max(24px, calc((100% - 1200px) / 2));
@@ -17,6 +20,7 @@
 	text-transform: uppercase;
 }
 
+/* Styles pour le titre principal "PORTFOLIO SELECTIONNÉ" et le sous-titre "MES PROJETS" de la section projets */
 .projects__title {
 	will-change: transform, opacity;
 	margin: 0;
@@ -37,6 +41,7 @@
 	font-style: inherit;
 }
 
+/* Styles pour la grille CSS à 2 colonnes décalées pour créer un effet d'alternance */
 .projects__grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -53,6 +58,7 @@
 	grid-column: 2;
 }
 
+/* Posisitionement par ligne pour chaque carte du grid généré dynamiquement */
 .projects__grid > .project-card:nth-child(1) { grid-row: 1; }
 .projects__grid > .project-card:nth-child(2) { grid-row: 2; }
 .projects__grid > .project-card:nth-child(3) { grid-row: 3; }
@@ -65,6 +71,7 @@
 	max-width: 560px;
 }
 
+/* Zone d'image du projet avec effet de zoom (scale) au survol */
 .project-card__media {
 	will-change: transform, opacity;
 	display: flex;
@@ -86,6 +93,7 @@
 	border-color: var(--tan);
 }
 
+/* Styles pour les images à l'intérieur de la zone d'image du projet */
 .project-card__media img {
 	width: 100%;
 	height: 100%;
@@ -95,10 +103,12 @@
 	transition: transform 0.4s ease;
 }
 
+/* Effet de zoom (scale) sur l'image du projet au survol */
 .project-card__media:hover img {
 	transform: scale(1.05);
 }
 
+/* Styles pour le texte (titre et description) à l'intérieur de chaque carte de projet */
 .project-card__media-placeholder {
 	color: rgba(234, 224, 213, 0.5);
 	font-family: "Playfair Display", Georgia, serif;
@@ -107,6 +117,7 @@
 	text-transform: uppercase;
 }
 
+/* Styles pour le titre de chaque carte de projet */
 .project-card__title {
 	will-change: transform, opacity;
 	width: 100%;
@@ -136,6 +147,7 @@
 	line-height: 1.45;
 }
 
+/* Styles pour le pied de chaque carte de projet (étiquettes et bouton) */
 .project-card__footer {
 	will-change: transform, opacity;
 	display: flex;
@@ -153,6 +165,7 @@
 	gap: 3px;
 }
 
+/* Styles pour les étiquettes (tags) de chaque carte de projet et de la modale */
 .project-card__tags span,
 .modal-project__tags span {
 	display: inline-flex;
@@ -184,6 +197,7 @@
 	color: var(--lin-doux);
 }
 
+/* Passage sur une seule colonne pour l'affichage sur mobile (max-width: 760px) */
 @media (max-width: 760px) {
 	.projects {
 		padding: 72px 24px 96px;

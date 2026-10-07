@@ -1,8 +1,12 @@
+/* STYLES POUR LE COMPOSANT BARRE PROGRESSIVE */
+
+/* Styles pour le conteneur principal de la barre progressive */
 .skills {
 	display: grid;
 	gap: 11px;
 }
 
+/* En-tête du niveau de compétence (Nom du domaine à gauche, pourcentage à droite) */
 .skill__heading {
 	display: flex;
 	align-items: center;
@@ -13,22 +17,26 @@
 	text-transform: uppercase;
 }
 
+/* Styles pour le nom du domaine de compétence à gauche de l'en-tête */
 .skill__heading span:first-child {
 	font-weight: 500;
 	letter-spacing: 1.2px;
 }
 
+/* Styles pour le pourcentage de compétence à droite de l'en-tête */
 .skill__heading span:last-child {
 	color: rgba(94, 80, 63, 0.8);
 	font-weight: 400;
 }
 
+/* Styles pour la piste de la barre de progression (fond) */
 .skill__track {
 	height: 4px;
 	border-radius: 30px;
 	background: rgba(198, 172, 143, 0.5);
 }
 
+/* Styles pour la barre de progression (remplissage dynamique) */
 .skill__progress {
 	display: block;
 	width: var(--progress);

@@ -1,3 +1,6 @@
+/* STYLES POUR LE COMPOSANT BOUTON */
+
+/* Styles pour le bouton principal */
 .bouton {
 	display: inline-flex;
 	align-items: center;
@@ -19,6 +22,7 @@
 	transition: background-color 280ms ease, color 280ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
 }
 
+/* Styles pour le texte à l'intérieur du bouton */
 .bouton > span {
 	display: inline-block;
 	transform: scale(1);
@@ -26,6 +30,7 @@
 	transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Styles pour le bouton au survol et à la mise au point (focus) */
 .bouton:hover,
 .bouton:focus-visible {
 	background: rgba(198, 172, 143, 0.8);
@@ -35,11 +40,13 @@
 	box-shadow: 0 0 18px rgba(198, 172, 143, 0.36);
 }
 
+/* Compensation légère de la taille du texte pour garder le texte lisible pendant l'agrandissement du bouton */
 .bouton:hover > span,
 .bouton:focus-visible > span {
 	transform: scale(0.9615);
 }
 
+/* Effet d'enfoncement du bouton lorsqu'il est cliqué (active) */
 .bouton:active {
 	background: var(--brun-pierre);
 	color: var(--lin-doux);
@@ -51,6 +58,7 @@
 	transform: scale(1.0526);
 }
 
+/* Variante plus large pour le bouton de la section contact */
 .bouton--contact {
 	min-height: 48px;
 	padding: 12px 32px;
