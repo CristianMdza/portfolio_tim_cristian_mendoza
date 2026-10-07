@@ -136,6 +136,67 @@ function initialiserNavigationMobile() {
 	});
 }
 
+function initialiserContrasteRetourHaut() {
+	const bouton = document.querySelector(".back-to-top");
+	const sectionsClaires = [...document.querySelectorAll("#a-propos, #contact")];
+	if (!bouton || !sectionsClaires.length) return;
+
+	const mettreAJour = () => {
+		const boutonRect = bouton.getBoundingClientRect();
+		const pointY = boutonRect.top + boutonRect.height / 2;
+		const surFondClair = sectionsClaires.some((section) => {
+			const rect = section.getBoundingClientRect();
+			return pointY >= rect.top && pointY <= rect.bottom;
+		});
+		bouton.classList.toggle("is-on-light", surFondClair);
+	};
+
+	window.addEventListener("scroll", mettreAJour, { passive: true });
+	window.addEventListener("resize", mettreAJour);
+	mettreAJour();
+}
+
+function initialiserBoucleLogiciels() {
+	const piste = document.querySelector(".software__track");
+	if (!piste || piste.children.length < 2) return;
+
+	const mesurerDistance = () => {
+		const milieu = piste.children.length / 2;
+		const premier = piste.children[0];
+		const copie = piste.children[milieu];
+		if (!premier || !copie) return;
+		const distance = copie.getBoundingClientRect().left - premier.getBoundingClientRect().left;
+		piste.style.setProperty("--software-loop-distance", `${distance}px`);
+	};
+
+	mettreAJourApresChargement(mesurerDistance);
+	window.addEventListener("resize", mesurerDistance);
+}
+
+function mettreAJourApresChargement(callback) {
+	if (document.readyState === "complete") {
+		callback();
+		return;
+	}
+	window.addEventListener("load", callback, { once: true });
+}
+
+function prechargerIconesLogiciels() {
+	const icones = [...document.querySelectorAll(".software__item iconify-icon")]
+		.map((icone) => icone.getAttribute("icon"))
+		.filter(Boolean);
+	const requetes = [...new Set(icones)].map((icone) => {
+		const [prefixe, nom] = icone.split(":");
+		return fetch(`https://api.iconify.design/${prefixe}.json?icons=${encodeURIComponent(nom)}`, { cache: "force-cache" });
+	});
+
+	Promise.allSettled(requetes).then((resultats) => {
+		if (resultats.some((resultat) => resultat.status === "rejected")) {
+			console.warn("Certaines icônes de logiciels n'ont pas pu être préchargées.");
+		}
+	});
+}
+
 // Animation d'apparisiton des cartes de projets au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
 function initialiserAnimationProjets() {
 	const section = document.querySelector("#projets");
@@ -339,4 +400,7 @@ initialiserAnimationProjets();
 initialiserAnimationServices();
 initialiserAnimationContact();
 initialiserNavigationMobile();
+initialiserContrasteRetourHaut();
+initialiserBoucleLogiciels();
+prechargerIconesLogiciels();
 document.fonts.ready.then(animerTitreHero);

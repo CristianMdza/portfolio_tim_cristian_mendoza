@@ -36,8 +36,8 @@
       {"titre": "Assemblage et préparation de la scène", "texte": "Nous avons rassemblé les éléments afin de vérifier l'assemblage global, les proportions et la préparation de l'exportation."},
       {"titre": "Intégration, éclairage et cadrage dans Unity", "texte": "Nous avons configuré l'éclairage, les caméras et les paramètres de rendu dans Unity pour produire les images finales."}
     ],
-    "imagePrincipale": "assets/images/projet_3/Chambre_vue_front_rendu.jpg",
-    "galerieImages": ["assets/images/projet_3/Chambre_vue_front_rendu.jpg", "assets/images/projet_3/Chambre_rendu.jpg", "assets/images/projet_3/Chambre_vue_droite_rendu.jpg", "assets/images/projet_3/Chambre_vue_gauche_rendu.jpg", "assets/images/projet_3/Chambre_vue_haut_rendu.jpg", "assets/images/projet_3/Feux_circulation_rendu.jpg", "assets/images/projet_3/Porte_futuriste_rendu.jpg", "assets/images/projet_3/Toilette_rendu.jpg"]
+    "imagePrincipale": "assets/images/projet_3/chambre_vue_front_rendu.jpg",
+    "galerieImages": ["assets/images/projet_3/chambre_vue_front_rendu.jpg", "assets/images/projet_3/chambre_rendu.jpg", "assets/images/projet_3/chambre_vue_droite_rendu.jpg", "assets/images/projet_3/chambre_vue_gauche_rendu.jpg", "assets/images/projet_3/chambre_vue_haut_rendu.jpg", "assets/images/projet_3/feux_circulation_rendu.jpg", "assets/images/projet_3/porte_futuriste_rendu.jpg", "assets/images/projet_3/toilette_rendu.jpg"]
   },
   {
     "id": 4,

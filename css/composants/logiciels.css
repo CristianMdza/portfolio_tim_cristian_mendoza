@@ -78,6 +78,7 @@
 	transform: translateZ(0);
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
+	--software-loop-distance: 1980px;
 	animation: scroll 22s linear infinite;
 }
 
@@ -155,7 +156,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 	100% {
-		transform: translate3d(-1980px, 0, 0);
+		transform: translate3d(calc(-1 * var(--software-loop-distance)), 0, 0);
 	}
 }
 
