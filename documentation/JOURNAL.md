@@ -243,3 +243,33 @@ Transitions et animations de zoom : Ajoute transition: transform 0.2s ease, opac
 Unification des couleurs : Par défaut rgba(234, 224, 213, 0.7), au survol opacity: 1; avec le zoom, et au clic (:active), passage au doré #C6AC8F (avec fill: currentColor; / color: inherit; pour forcer les icônes). »*
 - **Outil :** GitHub Copilot IA  
 - **Résultat :** Toutes les interactions du pied de page sont devenues dynamiques et cohérentes avec le reste du site. Le nom, le téléphone et les icônes réagissent de manière uniforme avec le léger zoom (scale(1.05)), l'opacité à 100% au survol et le retour visuel doré #C6AC8F lors du clic.
+
+## *5 questions (2ème bloc)*
+
+### 1. Qu'est-ce que j'ai accompli depuis le dernier bloc ?
+- J'ai fini le développement complet en code (HTML, CSS, JS) de toutes les sections de mon portfolio : En-tête, Hero, À propos, Mes projets (avec fenêtre modale/pop-up interactive et carrousel d'images), Services, Contact, Logiciels maîtrisés (carrousel infini) et Pied de page.
+- J'ai structuré mes dossiers et fichiers en suivant une architecture modulaire propre aussi par composants. 
+- J'ai programmé avec l'aide de Copilot toutes les animations interactives au défilement (scroll) à l'aide de CSS Animation et de la librairie « Anime.js » combinée aux observateurs d'intersection (**IntersectionObserver**).
+- J'ai finalisé le format du design « responsive » pour assurer une bonne visibilité fluide sur mobile et tablette, puis hébergé la version finale de mon portfolio sur GitHub Pages.
+
+### 2. Quelle a été ma principale difficulté et comment je l'ai surmontée ?
+J'ai rencontré plusieurs difficultés majeures pendant l'intégration de mon code :
+    - **La disposition des projets en zigzag :** Placer les projets en alternance (gauche/droite) comme sur mes maquettes Figma donnait de mauvais résultats au début. J'ai dû faire plusieurs essais en CSS Grid et ajuster les « grid-column » et « grid-row » pour obtenir exactement l'effet voulu.
+    - **La fenêtre modale (pop-up) et les chemins d'accès :** Faire charger le bon contenu pour chaque projet cliqué a été un gros casse-tête. Il y avait des erreurs cachées dans les données, ce qui m'a obligé à refaire tous les chemins d'accès des images et vidéos à la main, un par un.
+    - **Le carrousel de la section logiciels :** Reproduire le design Figma était réussi, mais l'animation de défilement horizontal infini n'était pas parfaite du premier coup, même avec l'aide de Copilot. J'ai dû ajuster les keyframes CSS et doubler les icônes pour masquer la coupure.
+    - **Le responsive design pour petits écrans :** C'était probablement le plus gros défi, car mon site contient énormément d'informations, d'images, de badges et de textes. Pour corriger les bugs d'affichage sur mobile, je devais spécifier exactement ce que je voulais à l'IA en lui montrant des captures d'écran des erreurs de format pour qu'elle comprenne comment redimensionner les blocs.
+    - **Le calage des animations au défilement (scroll) :** Au début, les animations se déclenchaient trop tôt ou trop tard (quand on était encore loin ou déjà dépassé). J'ai résolu cela en ajustant la sensibilité de l'IntersectionObserver avec un « threshold » à 0.3 et un « rootMargin » précis pour que les éléments apparaissent au moment exact où le visiteur arrive dessus.
+
+### 3. Qu'est-ce que j'ai appris que je ne savais pas avant ?
+- J'ai appris à maîtriser « IntersectionObserver » couplé à « Anime.js » pour contrôler précisément le moment et le seuil d'apparition des animations quand le visiteur fait défiler la page.
+- J'ai appris à déboguer des structures de données via le fichier de base des données « JSON » et à corriger à la main des erreurs de chemins d'accès d'images,vidéos et même l'information textuelle pour alimenter des composants dynamiques JS.
+- J'ai appris à travailler efficacement avec une IA (Copilot) pour le responsive design, en lui fournissant des retours visuels précis avec des captures d'écran pour ajuster les Media Queries CSS dés autres formats d'écrans.
+- J'ai appris à l'aide de Copilot à concevoir un carrousel CSS en boucle infinie en doublant les éléments HTML masqués (« aria-hidden="true" »).
+
+### 4. Quelle est ma prochaine étape concrète ?
+Ma prochaine étape concrète est de vérifier dans l'inspecteur qu'il n'y a aucune erreur de code, valider que mon document de journal est complet et remplir le fichier Excel avec les tests de ma bêta, mes corrections et mon autoévaluation. Ensuite, je vais m'assurer que le site charge parfaitement depuis le lien GitHub Pages et bien me préparer à la présentation orale de mon portfolio.
+
+### 5. Est-ce que j'ai utilisé l'IA ? Si oui, pour quoi et qu'est-ce que ça m'a appris ?
+Oui, j'ai utilisé l'IA de « GitHub Copilot » dans VS Code pour générer la structure de base du code HTML/CSS, les fonctions JavaScript et les requêtes d'animations Anime.js.
+
+Cela m'a appris qu'une IA ne donne presque jamais un résultat parfait du premier coup, surtout pour le style visuel et le responsive. J'ai compris que l'IA a besoin de « prompts » très précises et qu'il faut obligatoirement lui envoyer des captures d'écran des bugs pour qu'elle réajuste le code. Au final, c'est mon propre travail de débogage manuel (correction des chemins d'accès, ajustement de la grille zigzag, réglage fine des timers de modale et des seuils d'animation) qui a permis de rendre le site fidèle à ma maquette Figma.
