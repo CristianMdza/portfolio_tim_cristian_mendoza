@@ -30,7 +30,7 @@
     "role": "Modélisateurs 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
     "coequipiers": ["Cristian Mendoza", "Jonathan Crevier", "Mohamed Sadki", "Jad Saloumi"],
     "processus": [
-      {"titre": "Coéquipiers", "texte": "Christian Mendoza, Jonathan Crevier, jad Saloumi et Mohamed Ali."},
+      {"titre": "Coéquipiers", "texte": "Christian Mendoza, Jonathan Crevier, Jad Saloumi et Mohamed Ali."},
       {"titre": "Recherche d'idées et direction artistique (Moodboards)", "texte": "Pour lancer le projet, nous avons défini l'univers visuel de notre “Chambre farfelue” en créant un moodboard global pour établir la base du style. Chacun a ensuite fait des recherches et conçu des moodboards individuels pour ses objets assignés."},
       {"titre": "Esquisse globale et présentation de concept (PowerPoint)", "texte": "Avant de toucher au logiciel 3D, on a fait un croquis 2D de la chambre pour placer nos 12 objets et bien structurer l'espace. On a ensuite tout regroupé dans une présentation PowerPoint avec nos moodboards pour présenter le concept à l'enseignante et faire valider notre direction artistique."},
       {"titre": "Modélisation 3D individuelle dans Autodesk Maya", "texte": "Nous nous sommes ensuite réparti la modélisation des assets sous Autodesk Maya. Pour ma part, j'ai modélisé trois éléments centraux du décor : le feu de circulation suspendu, la porte futuriste ainsi que la toilette détournée en table de nuit, en veillant à respecter le niveau de détail et la géométrie demandés."},
