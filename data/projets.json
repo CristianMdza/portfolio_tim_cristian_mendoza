@@ -47,8 +47,8 @@
     "descriptionDemande": "Le projet demandait de concevoir un personnage original non réaliste à partir d'un univers librement choisi et de le préparer avec un squelette 3D afin de pouvoir le positionner. Il fallait présenter le concept via une planche de références, modéliser le personnage en T-pose, puis configurer l'éclairage et les caméras dans Unity.",
     "descriptionProjet": "J'ai élaboré le moodboard, le synopsis et l'univers du personnage sur PowerPoint en misant sur des formes arrondies, une palette pastel et une ambiance hivernale. J'ai ensuite modélisé Noctar sous Maya, configuré son rig et son skinning, puis ajusté l'éclairage dans Unity pour créer un effet plastique et glacé.",
     "role": "Modélisateur 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "Individuel", "mention": "Académique", "format": "1920x1080",
-    "imagePrincipale": "assets/images/projet_4/Nouvelle_posture_02.jpg",
-    "galerieImages": ["assets/images/projet_4/Nouvelle_posture_02.jpg", "assets/images/projet_4/Nouvelle_posture_01.jpg", "assets/images/projet_4/Nouvelle_posture_03.jpg", "assets/images/projet_4/Nouvelle_posture_04.jpg", "assets/images/projet_4/Posture_t_01.jpg", "assets/images/projet_4/Posture_t_02.jpg", "assets/images/projet_4/Posture_t_03.jpg"]
+    "imagePrincipale": "assets/images/projet_4/webp/Nouvelle_posture_2_img_02.webp",
+    "galerieImages": ["assets/images/projet_4/webp/Moodboard_noctar_img_09.webp", "assets/images/projet_4/webp/Univers_personnage_noctar_img_08.webp", "assets/images/projet_4/webp/Posture_t_1_img_05.webp", "assets/images/projet_4/webp/Posture_t_2_img_06.webp", "assets/images/projet_4/webp/Posture_t_3_img_07.webp", "assets/images/projet_4/webp/Nouvelle_posture_1_img_01.webp", "assets/images/projet_4/webp/Nouvelle_posture_2_img_02.webp", "assets/images/projet_4/webp/Nouvelle_posture_3_img_03.webp", "assets/images/projet_4/webp/Nouvelle_posture_4_img_04.webp"]
   },
   {
     "id": 5,
