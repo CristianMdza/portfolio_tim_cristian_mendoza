@@ -25,13 +25,14 @@
     "id": 3,
     "titre": "Chambre farfelue", "categorie": "Modélisation 3D",
     "description": "Conception collaborative d'un environnement intérieur 3D irréel et humoristique où des objets du quotidien sont détournés de leur fonction initiale.",
-    "descriptionDemande": "L'enseignante demandait de concevoir en équipe une scène 3D originale et surréaliste composée d'au moins trois objets modélisés par personne. Le projet exigeait d'élaborer une présentation de concept, de modéliser l'ensemble des éléments, puis d'importer le tout dans Unity pour configurer l'éclairage, les caméras et générer les rendus finaux.",
+    "descriptionDemande": "Le projet demandait de concevoir en équipe une scène 3D originale et surréaliste composée d'au moins trois objets modélisés par personne. Le projet exigeait également d'élaborer une présentation de concept, de modéliser l'ensemble des éléments, puis d'importer le tout dans Unity pour configurer l'éclairage, les caméras et générer les rendus finaux.",
     "descriptionProjet": "J'ai modélisé un feu de circulation, une porte futuriste et une toilette faisant office de table de nuit dans Autodesk Maya, tout en participant au moodboard collectif et à l'esquisse de la pièce. J'ai ensuite collaboré à l'intégration de la scène dans Unity pour configurer l'éclairage, cadrer les caméras et produire les rendus finaux.",
     "role": "Modélisateurs 3D", "logiciel": "Autodesk Maya", "annee": "2024", "modalite": "En équipe", "mention": "Académique", "format": "1920x1080",
     "coequipiers": ["Cristian Mendoza", "Jonathan Crevier", "Mohamed Sadki", "Jad Saloumi"],
     "processus": [
+      {"titre": "Coéquipiers", "texte": "Christian Mendoza, Jonathan Crevier, jad Saloumi et Mohamed Ali."},
       {"titre": "Recherche d'idées et direction artistique (Moodboards)", "texte": "Nous avons défini l'univers visuel avec un moodboard global, puis chacun a conçu des moodboards individuels pour ses objets assignés."},
-      {"titre": "Esquisse globale et présentation de concept (PowerPoint)", "texte": "Nous avons fait un croquis 2D de la chambre pour placer les 12 objets, puis regroupé les recherches dans une présentation PowerPoint."},
+      {"titre": "Esquisse globale et présentation de concept (PowerPoint)", "texte": "Nous avons fait un croquis 2D de la chambre pour placer les 12 objets, puis regroupé nos conceptions dans une présentation PowerPoint."},
       {"titre": "Modélisation 3D individuelle dans Autodesk Maya", "texte": "J'ai créé le feu de circulation suspendu, la porte futuriste et la toilette détournée en table de nuit."},
       {"titre": "Assemblage et préparation de la scène", "texte": "Nous avons rassemblé les éléments afin de vérifier l'assemblage global, les proportions et la préparation de l'exportation."},
       {"titre": "Intégration, éclairage et cadrage dans Unity", "texte": "Nous avons configuré l'éclairage, les caméras et les paramètres de rendu dans Unity pour produire les images finales."}
