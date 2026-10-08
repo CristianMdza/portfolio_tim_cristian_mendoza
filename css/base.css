@@ -34,3 +34,7 @@ button {
 .modal-is-open {
 	overflow: hidden;
 }
+
+.menu-is-open {
+	overflow: hidden;
+}

@@ -40,7 +40,8 @@
 				</a>
 
 				<button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="navigation-principale" aria-label="Ouvrir le menu">
-					<iconify-icon icon="solar:hamburger-menu-linear" aria-hidden="true"></iconify-icon>
+					<iconify-icon class="site-nav-toggle__icon site-nav-toggle__icon--menu" icon="solar:hamburger-menu-linear" aria-hidden="true"></iconify-icon>
+					<iconify-icon class="site-nav-toggle__icon site-nav-toggle__icon--close" icon="solar:close-linear" aria-hidden="true"></iconify-icon>
 				</button>
 
 				<!-- Navigation principale du site avec liens vers les sections Accueil, À propos, Mes projets, Services et Contact -->
@@ -66,6 +67,7 @@
 						<span>Contact</span>
 					</a>
 				</nav>
+				<div class="site-nav-backdrop" data-menu-backdrop aria-hidden="true"></div>
 			</div>
 		</header>
 

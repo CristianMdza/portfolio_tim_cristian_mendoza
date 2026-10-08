@@ -5,6 +5,29 @@
 	background: var(--noir-fonce);
 }
 
+.site-nav-toggle[aria-expanded="true"] .site-nav-toggle__icon--menu {
+	display: none;
+}
+
+.site-nav-toggle[aria-expanded="true"] .site-nav-toggle__icon--close {
+	display: block;
+}
+
+.site-nav-toggle:hover,
+.site-nav-toggle:focus-visible {
+	background: rgba(198, 172, 143, 0.2);
+	outline: none;
+	transform: scale(1.04);
+	filter: drop-shadow(0 0 10px rgba(198, 172, 143, 0.28));
+}
+
+.site-nav-toggle:active {
+	background: var(--tan);
+	color: var(--noir-fonce);
+	transform: scale(0.95);
+	filter: none;
+}
+
 /* Styles pour le contenu de l'en-tête */
 .site-header__inner {
 	display: flex;
@@ -64,16 +87,35 @@
 	justify-content: center;
 	width: 44px;
 	height: 44px;
+	position: relative;
+	z-index: 7;
 	padding: 0;
 	border: 2px solid var(--brun-pierre);
 	border-radius: 50%;
 	background: transparent;
 	color: var(--lin-doux);
 	cursor: pointer;
+	transform: scale(1);
+	transition: background-color 280ms ease, color 280ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1), filter 280ms ease;
 }
 
-.site-nav-toggle iconify-icon {
+.site-nav-toggle::before {
+	position: absolute;
+	inset: 5px;
+	border-radius: 50%;
+	background: var(--tan);
+	content: "";
+}
+
+.site-nav-toggle__icon {
+	position: relative;
+	z-index: 1;
 	font-size: 24px;
+	color: var(--noir-fonce);
+}
+
+.site-nav-toggle__icon--close {
+	display: none;
 }
 
 /* Styles pour les liens de navigation dans la capsule/pilule */
@@ -105,6 +147,7 @@
 	background: rgba(198, 172, 143, 0.2);
 	outline: none;
 	transform: scale(1.04);
+	filter: drop-shadow(0 0 10px rgba(198, 172, 143, 0.28));
 }
 
 /* Styles pour les liens de navigation lorsqu'ils sont actifs */
@@ -222,6 +265,22 @@
 	letter-spacing: 1.2px;
 	text-transform: uppercase;
 	transform: translateX(-50%);
+}
+
+.site-nav-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 4;
+	display: none;
+	background: rgba(10, 9, 8, 0.72);
+}
+
+.site-nav.is-open + .site-nav-backdrop {
+	display: block;
+}
+
+.site-nav.is-open {
+	z-index: 6;
 }
 
 /* Styles pour la ligne verticale de l'indicateur de défilement "DÉFILER" */
@@ -541,8 +600,8 @@
 	.site-header__inner {
 		position: relative;
 		flex-direction: row;
-		justify-content: space-between;
-		gap: 16px;
+		justify-content: center;
+		gap: clamp(20px, 8vw, 34px);
 	}
 
 	.site-nav-toggle {
@@ -620,9 +679,11 @@
 	}
 
 	.about__visual {
-		width: min(100%, 380px);
-		height: min(420px, 105vw);
+		width: min(100%, 280px);
+		height: auto;
+		aspect-ratio: 3 / 4;
 		margin: 0 auto;
+		justify-self: center;
 	}
 
 	.contact {
@@ -689,9 +750,12 @@
 	}
 
 	.about__visual {
-		width: min(100%, 300px);
-		height: 340px;
+		width: min(100%, 260px);
+		height: auto;
+		aspect-ratio: 3 / 4;
 		padding: 8px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	.about__experience {

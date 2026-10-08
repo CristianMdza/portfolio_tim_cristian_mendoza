@@ -113,23 +113,30 @@ function initialiserAnimationAPropos() {
 function initialiserNavigationMobile() {
 	const bouton = document.querySelector(".site-nav-toggle");
 	const navigation = document.querySelector(".site-nav");
-	if (!bouton || !navigation) return;
+	const backdrop = document.querySelector("[data-menu-backdrop]");
+	if (!bouton || !navigation || !backdrop) return;
 
 	const fermerMenu = () => {
 		navigation.classList.remove("is-open");
 		bouton.setAttribute("aria-expanded", "false");
 		bouton.setAttribute("aria-label", "Ouvrir le menu");
+		document.body.classList.remove("menu-is-open");
 	};
 
 	bouton.addEventListener("click", () => {
 		const ouvert = navigation.classList.toggle("is-open");
 		bouton.setAttribute("aria-expanded", String(ouvert));
 		bouton.setAttribute("aria-label", ouvert ? "Fermer le menu" : "Ouvrir le menu");
+		document.body.classList.toggle("menu-is-open", ouvert);
 	});
 
 	navigation.addEventListener("click", (evenement) => {
-		if (evenement.target.closest(".site-nav__link")) fermerMenu();
+		const lien = evenement.target.closest(".site-nav__link");
+		if (!lien) return;
+		fermerMenu();
 	});
+
+	backdrop.addEventListener("click", fermerMenu);
 
 	document.addEventListener("keydown", (evenement) => {
 		if (evenement.key === "Escape") fermerMenu();
