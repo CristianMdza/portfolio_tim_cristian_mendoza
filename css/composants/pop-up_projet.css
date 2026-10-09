@@ -197,6 +197,7 @@
     font-weight: 700; 
 } 
 
+/* Styles pour le texte à l'intérieur du titre de la modale (nom du projet) */
 .modal-project__heading span { 
     color: var(--tan); 
     font-weight: 500; 
@@ -220,6 +221,7 @@
     text-transform: uppercase; 
 } 
 
+/* Styles pour les paragraphes de texte à l'intérieur des sections de la modale */
 .modal-project__section p, 
 .modal-project__process p { 
     margin: 0; 
@@ -238,6 +240,7 @@
     overflow: hidden; 
 } 
 
+/* Styles pour chaque étiquette (tag) de la modale */
 .modal-project__tags span { 
     flex: 0 0 auto; 
     min-width: 0; 
@@ -246,10 +249,12 @@
     font-size: 0.875rem; 
 } 
 
+/* Styles pour chaque élément de processus (étapes) de la modale */
 .modal-project__process-item { 
     margin-top: 14px; 
 } 
 
+/* Styles pour le titre (strong) de chaque élément de processus de la modale */
 .modal-project__process-item strong { 
     display: block; 
     margin-bottom: 4px; 
@@ -260,6 +265,7 @@
     text-transform: none; 
 } 
 
+/* Styles pour le texte de description de chaque élément de processus de la modale */
 .modal-project__media, 
 .modal-project__heading, 
 .modal-project__separator, 

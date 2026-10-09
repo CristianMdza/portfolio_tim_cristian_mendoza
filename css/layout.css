@@ -5,14 +5,17 @@
 	background: var(--noir-fonce);
 }
 
+/* Styles pour le bouton de bascule du menu de navigation */
 .site-nav-toggle[aria-expanded="true"] .site-nav-toggle__icon--menu {
 	display: none;
 }
 
+/* Styles pour le bouton de bascule du menu de navigation lorsqu'il est ouvert */
 .site-nav-toggle[aria-expanded="true"] .site-nav-toggle__icon--close {
 	display: block;
 }
 
+/* Styles pour le bouton de bascule du menu de navigation au survol et à la mise au point */
 .site-nav-toggle:hover,
 .site-nav-toggle:focus-visible {
 	background: rgba(198, 172, 143, 0.2);
@@ -21,6 +24,7 @@
 	filter: drop-shadow(0 0 10px rgba(198, 172, 143, 0.28));
 }
 
+/* Styles pour le bouton de bascule du menu de navigation lorsqu'il est actif (cliqué) */
 .site-nav-toggle:active {
 	background: var(--tan);
 	color: var(--noir-fonce);

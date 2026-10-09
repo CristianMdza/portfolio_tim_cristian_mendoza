@@ -60,6 +60,7 @@
 	transition: transform 0.2s ease, opacity 0.3s ease, color 0.2s ease;
 }
 
+/* Styles pour le texte de contact (telephone) et de localisation dans le pied de page */
 .site-footer__contact,
 .site-footer__location {
 	color: #EAE0D5;
@@ -72,6 +73,7 @@
 	transition: transform 0.2s ease, opacity 0.3s ease, color 0.2s ease;
 }
 
+/* Styles pour le texte de contact (email) dans le pied de page */
 .site-footer__contact {
 	margin: 0;
 }
@@ -83,6 +85,7 @@
 	gap: 16px;
 }
 
+/* Styles pour les liens des réseaux sociaux dans le pied de page */
 .site-footer__socials a {
 	display: inline-flex;
 	color: #EAE0D5;
@@ -118,6 +121,7 @@
 	transform: scale(1.05);
 }
 
+/* Styles pour les icônes (SVG) des réseaux sociaux au survol et à la mise au point */
 .site-footer__socials a:hover iconify-icon,
 .site-footer__socials a:focus-visible iconify-icon {
 	color: rgba(198, 172, 143, 0.65);
@@ -127,6 +131,7 @@
 	filter: none;
 }
 
+/* Styles pour les éléments interactifs du pied de page lorsqu'ils sont actifs (cliqués) */
 .site-footer__brand:active,
 .site-footer__contact:active,
 .site-footer__socials a:active {
@@ -135,6 +140,7 @@
 	transform: scale(0.95);
 }
 
+/* Styles pour les icônes (SVG) des réseaux sociaux lorsqu'ils sont actifs (cliqués) */
 .site-footer__socials a:active iconify-icon {
 	color: #C6AC8F;
 	fill: currentColor;

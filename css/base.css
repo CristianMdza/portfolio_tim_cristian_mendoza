@@ -30,7 +30,7 @@ button {
 	font: inherit;
 }
 
-/* Classe pour empêcher le défilement lorsque la modale est ouverte */
+/* Classe pour empêcher le défilement lorsque la modale et le menu sont ouverts */
 .modal-is-open {
 	overflow: hidden;
 }

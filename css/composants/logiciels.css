@@ -126,6 +126,7 @@
 	filter: brightness(0) saturate(100%) invert(88%) sepia(18%) saturate(350%) hue-rotate(345deg) brightness(98%) contrast(90%);
 }
 
+/* Styles pour les icônes (SVG) des logiciels (Iconify) à l'intérieur de chaque élément logiciel */
 .software__item iconify-icon svg {
 	width: 48px;
 	height: 48px;
@@ -135,6 +136,7 @@
 	filter: brightness(0) saturate(100%) invert(88%) sepia(18%) saturate(350%) hue-rotate(345deg) brightness(98%) contrast(90%);
 }
 
+/* Styles pour les chemins (path), cercles (circle), rectangles (rect) et polygones (polygon) à l'intérieur des icônes (SVG) des logiciels (Iconify) */
 .software__item iconify-icon svg path,
 .software__item iconify-icon svg circle,
 .software__item iconify-icon svg rect,

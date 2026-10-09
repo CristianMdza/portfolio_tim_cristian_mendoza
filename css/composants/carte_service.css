@@ -20,6 +20,7 @@
 	text-align: center;
 }
 
+/* Styles pour le sous-titre "SERVICES" de la section services */
 .services__eyebrow {
 	margin: 0 0 24px;
 	color: var(--tan);

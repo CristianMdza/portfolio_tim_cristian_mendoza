@@ -1,6 +1,10 @@
 // Importation des fonctions nécessaires pour charger les projets, créer les cartes de projet et initialiser la pop-up de projet.
+
+// Chargement des projets depuis le fichier JSON.
 import { chargerProjets } from "./data.js";
+// Création des cartes de projet individuelles.
 import { creerCarteProjet } from "./composants/carte_projet.js";
+// Initialisation de la pop-up de projet pour afficher les détails d'un projet lorsqu'on clique sur une carte de projet.
 import { initialiserPopUp } from "./composants/pop_up_projet.js";
 
 const grille = document.querySelector(".projects__grid");
@@ -10,6 +14,7 @@ function animerTitreHero() {
 	const lettres = document.querySelectorAll(".hero__title-letter");
 	if (!lettres.length || typeof window.anime !== "function") return;
 
+	// Anime.js est utilisé pour animer l'opacité de chaque lettre du titre, en les faisant apparaître progressivement avec un léger décalage entre chaque lettre.
 	window.anime({
 		targets: lettres,
 		opacity: [0, 1],
@@ -24,6 +29,7 @@ function initialiserAnimationAPropos() {
 	const section = document.querySelector("#a-propos");
 	if (!section || typeof window.anime !== "function") return;
 
+	// Anime.js est utilisé pour animer l'opacité et la position des éléments de la section "À propos", avec des effets de translation et de progression pour les barres de compétences.
 	const anime = window.anime;
 	const lignesTitre = section.querySelectorAll(".about__title > span");
 	const paragraphes = section.querySelectorAll(".about__copy p");
@@ -50,6 +56,7 @@ function initialiserAnimationAPropos() {
 		pourcentage.textContent = "0%";
 	});
 
+	// Timeline d'animation pour orchestrer l'apparition des éléments de la section "À propos" avec des effets de translation, d'opacité et de progression pour les barres de compétences.
 	const valeurCompteur = { valeur: 0 };
 	const timeline = anime.timeline({ autoplay: false });
 
@@ -110,12 +117,14 @@ function initialiserAnimationAPropos() {
 	observer.observe(section);
 }
 
+// Animation d'apparisiton des cartes de projets au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
 function initialiserNavigationMobile() {
 	const bouton = document.querySelector(".site-nav-toggle");
 	const navigation = document.querySelector(".site-nav");
 	const backdrop = document.querySelector("[data-menu-backdrop]");
 	if (!bouton || !navigation || !backdrop) return;
 
+	// Fonction pour fermer le menu mobile, en retirant les classes et attributs appropriés pour restaurer l'état initial du menu et du bouton.
 	const fermerMenu = () => {
 		navigation.classList.remove("is-open");
 		bouton.setAttribute("aria-expanded", "false");
@@ -123,6 +132,7 @@ function initialiserNavigationMobile() {
 		document.body.classList.remove("menu-is-open");
 	};
 
+	// Gestion des clics sur le bouton du menu mobile pour ouvrir ou fermer le menu, en alternant les classes et attributs pour refléter l'état actuel du menu.
 	bouton.addEventListener("click", () => {
 		const ouvert = navigation.classList.toggle("is-open");
 		bouton.setAttribute("aria-expanded", String(ouvert));
@@ -130,24 +140,29 @@ function initialiserNavigationMobile() {
 		document.body.classList.toggle("menu-is-open", ouvert);
 	});
 
+	// Gestion des clics sur les liens de navigation pour fermer le menu mobile après la sélection d'une option, afin d'améliorer l'expérience utilisateur sur les appareils mobiles.
 	navigation.addEventListener("click", (evenement) => {
 		const lien = evenement.target.closest(".site-nav__link");
 		if (!lien) return;
 		fermerMenu();
 	});
 
+	// Gestion du clic sur le backdrop (zone grisée derrière le menu) pour fermer le menu mobile, offrant une méthode intuitive pour l'utilisateur de fermer le menu sans avoir à cliquer sur le bouton.
 	backdrop.addEventListener("click", fermerMenu);
 
+	// Gestion de la touche "Escape" pour fermer le menu mobile, permettant aux utilisateurs d'utiliser le clavier pour interagir avec le menu et améliorer l'accessibilité.
 	document.addEventListener("keydown", (evenement) => {
 		if (evenement.key === "Escape") fermerMenu();
 	});
 }
 
+// Animation d'apparisiton des cartes de projets au défilement de la page, avec un effet de translation et d'opacité pour chaque carte, en utilisant Intersection Observer et Anime.js.
 function initialiserContrasteRetourHaut() {
 	const bouton = document.querySelector(".back-to-top");
 	const sectionsClaires = [...document.querySelectorAll("#a-propos, #contact")];
 	if (!bouton || !sectionsClaires.length) return;
 
+	// Met à jour la classe du bouton "Retour en haut" pour changer son contraste en fonction de la section sur laquelle il se trouve, afin d'assurer une bonne lisibilité sur les sections claires et sombres.
 	const mettreAJour = () => {
 		const boutonRect = bouton.getBoundingClientRect();
 		const pointY = boutonRect.top + boutonRect.height / 2;
@@ -158,6 +173,7 @@ function initialiserContrasteRetourHaut() {
 		bouton.classList.toggle("is-on-light", surFondClair);
 	};
 
+	// Met à jour le contraste du bouton "Retour en haut" lors du défilement et du redimensionnement de la fenêtre, pour s'assurer que le contraste est toujours correct même lorsque l'utilisateur interagit avec la page.
 	window.addEventListener("scroll", mettreAJour, { passive: true });
 	window.addEventListener("resize", mettreAJour);
 	mettreAJour();
@@ -167,6 +183,7 @@ function initialiserBoucleLogiciels() {
 	const piste = document.querySelector(".software__track");
 	if (!piste || piste.children.length < 2) return;
 
+	// Mesure la distance entre le premier élément et son clone pour déterminer la distance de défilement nécessaire pour créer une boucle fluide des icônes de logiciels.
 	const mesurerDistance = () => {
 		const milieu = piste.children.length / 2;
 		const premier = piste.children[0];
